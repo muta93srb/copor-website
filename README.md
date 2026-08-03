@@ -9,7 +9,8 @@ Fully static club website, hosted for free on GitHub Pages.
   - `i18n/` — translation dictionaries (`sr-Cyrl.json`, `sr-Latn.json`, `en.json`); language switcher in the header.
   - `gallery/images/` — **drop photos here.** `gallery/manifest.json` is auto-generated on every deploy (see below) — you never edit it by hand.
   - `assets/logo/` — web-sized logo files only (favicon, header logo, social preview).
-- `assets/logo/` (repo root) — the full print-ready logo set (full color, single-color, vector, large PNG) for t-shirts and plastic/engraving. **Not part of the deployed site** — see [assets/logo/README.md](assets/logo/README.md).
+- `print/` — the print-ready logo files (full color, single-color, vector, large PNG) for t-shirts and plastic/engraving — hand this folder to a print shop. **Not part of the deployed site.** See [print/README.md](print/README.md).
+- `assets/logo/` (repo root) — the full logo asset pipeline output, including the `print/` files plus web-only versions. See [assets/logo/README.md](assets/logo/README.md).
 - `images/` — original source mockups the logo was extracted from.
 - `tools/` — one-off Node scripts used to build assets (`process-logo.mjs`, `generate-gallery-manifest.js`). Not deployed.
 - `.github/workflows/deploy.yml` — regenerates the gallery manifest and deploys `site/` to GitHub Pages on every push to `main`.
