@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("copor-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bratski timovi — ЧОПОР</title>
+    <meta name="description" content="Klubovi i timovi sa kojima ЧОПОР neguje saradnju i prijateljstvo." />
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/logo/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html#top">
+          <img src="assets/logo/copor-logo-web.webp" alt="ЧОПОР logo" width="42" height="48" />
+          <span class="brand-name">ЧОПОР</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html#about" data-i18n="nav.about">O klubu</a>
+          <a href="pravilnik.html" data-i18n="nav.pravilnik">Pravilnik</a>
+          <a href="tereni-srbije.html" data-i18n="nav.tereniSrbije">Tereni Srbije</a>
+          <a href="bratski-timovi.html" data-i18n="nav.bratskiTimovi">Bratski timovi</a>
+          <a href="asz-jug.html" data-i18n="nav.aszJug">ASZ Jug</a>
+          <a href="index.html#tim" data-i18n="nav.tim">Tim</a>
+          <a href="index.html#gallery" data-i18n="nav.gallery">Galerija</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="sr-Cyrl">ЋИР</button>
+            <button type="button" data-lang="sr-Latn">LAT</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+          <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light/dark theme">☾</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <p class="breadcrumb"><a href="index.html" data-i18n="breadcrumb.home">Početna</a> / <span data-i18n="nav.bratskiTimovi">Bratski timovi</span></p>
+          <span class="eyebrow" data-i18n="alliesPage.eyebrow">Saradnja</span>
+          <h1 data-i18n="alliesPage.title">Bratski timovi</h1>
+          <p data-i18n="alliesPage.intro">
+            Airsoft je jači kada se klubovi podržavaju — bratski timovi su ekipe sa kojima redovno
+            treniramo, razmenjujemo iskustva i zajedno izlazimo na događaje.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="page-empty" data-i18n="alliesPage.empty">
+            Lista bratskih timova se trenutno popunjava. Ako predstavljaš klub sa kojim bismo
+            mogli da sarađujemo, javi nam se preko kontakt sekcije.
+          </div>
+          <p><a class="btn" href="index.html#contact" data-i18n="alliesPage.cta">Kontaktiraj nas →</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span data-i18n="footer.text">© 2026 ЧОПОР Airsoft klub. Sva prava zadržana.</span>
+      </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

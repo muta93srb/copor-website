@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("copor-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ЧОПОР — Airsoft klub</title>
+    <meta
+      name="description"
+      content="ЧОПОР Airsoft klub — ekipa, treninzi, tereni i galerija sa airsoft utakmica."
+    />
+    <meta property="og:title" content="ЧОПОР — Airsoft klub" />
+    <meta property="og:image" content="assets/logo/social-preview.png" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/logo/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#top">
+          <img src="assets/logo/copor-logo-web.webp" alt="ЧОПОР logo" width="42" height="48" />
+          <span class="brand-name">ЧОПОР</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html#about" data-i18n="nav.about">O klubu</a>
+          <a href="pravilnik.html" data-i18n="nav.pravilnik">Pravilnik</a>
+          <a href="tereni-srbije.html" data-i18n="nav.tereniSrbije">Tereni Srbije</a>
+          <a href="bratski-timovi.html" data-i18n="nav.bratskiTimovi">Bratski timovi</a>
+          <a href="asz-jug.html" data-i18n="nav.aszJug">ASZ Jug</a>
+          <a href="index.html#tim" data-i18n="nav.tim">Tim</a>
+          <a href="index.html#gallery" data-i18n="nav.gallery">Galerija</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="sr-Cyrl">ЋИР</button>
+            <button type="button" data-lang="sr-Latn">LAT</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+          <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light/dark theme">☾</button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <img src="assets/logo/copor-logo-web.webp" alt="ЧОПОР — Airsoft klub" />
+          <h1 data-i18n="hero.title">ЧОПОР</h1>
+          <p data-i18n="hero.subtitle">
+            Airsoft klub okupljen oko discipline, timskog rada i poštovanja terena.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-solid" href="#gallery" data-i18n="hero.ctaGallery">Pogledaj galeriju</a>
+            <a class="btn" href="#contact" data-i18n="hero.ctaContact">Pridruži se</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <span class="eyebrow" data-i18n="about.eyebrow">O nama</span>
+          <h2 data-i18n="about.title">Ko je ЧОПОР</h2>
+          <p data-i18n="about.body">
+            ЧОПОР je airsoft klub posvećen taktičkoj igri, terenskoj disciplini i drugarstvu.
+            Redovno organizujemo treninge i operacije, radimo na opremi i taktici, i uvek tražimo
+            nove članove koji dele istu strast prema airsoftu.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 data-i18n="about.card1Title">Snaga</h3>
+              <p data-i18n="about.card1Body">Simbol liderstva i instinkta — vučja glava kao znak našeg tima.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="about.card2Title">Preciznost</h3>
+              <p data-i18n="about.card2Body">Fokus na cilj, taktiku i kontinuirano usavršavanje.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="about.card3Title">Bratstvo</h3>
+              <p data-i18n="about.card3Body">Tim, disciplina i poverenje — pre svega ostalog.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="container">
+          <span class="eyebrow" data-i18n="gallery.eyebrow">Momenti</span>
+          <h2 data-i18n="gallery.title">Galerija</h2>
+          <p data-i18n="gallery.intro">Fotografije sa treninga i operacija kluba.</p>
+
+          <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+          <p class="gallery-empty" id="galleryEmpty" hidden data-i18n="gallery.empty">
+            Galerija je trenutno prazna. Uskoro dodajemo fotografije.
+          </p>
+          <p class="gallery-error" id="galleryError" hidden data-i18n="gallery.error">
+            Galerija trenutno nije dostupna.
+          </p>
+        </div>
+      </section>
+
+      <section id="pravilnik">
+        <div class="container">
+          <span class="eyebrow" data-i18n="rules.eyebrow">Bezbednost</span>
+          <h2 data-i18n="rules.title">Pravilnik</h2>
+          <p data-i18n="rules.intro">
+            Naši treninzi i operacije prate Srpski Airsoft Pravilnik (SASP) i dopune koje se
+            primenjuju na događajima u organizaciji šire airsoft zajednice. Ispod je sažetak
+            najvažnijih bezbednosnih pravila — puna pravila se objašnjavaju pre svakog događaja.
+          </p>
+
+          <div class="about-grid rules-grid">
+            <div class="about-card">
+              <h3 data-i18n="rules.eyewearTitle">Zaštitna oprema</h3>
+              <p data-i18n="rules.eyewearBody">
+                Zaštitne naočare/maska nose se na terenu u svakom trenutku i ne skidaju se ni
+                na trenutak, bez obzira na okolnosti.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.hitTitle">Pogodak i kill rag</h3>
+              <p data-i18n="rules.hitBody">
+                Pogodak u bilo koji deo tela, opreme ili replike (uključujući od saigrača) se
+                priznaje. Igrač spušta repliku, javlja se glasno „POGOĐEN“, stavlja kill rag
+                (40×40cm, fluo narandžast/crven) i najkraćim putem ide do spawn pozicije, bez
+                komunikacije sa igračima u igri.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.blindfireTitle">Zabranjeno slepo pucanje</h3>
+              <p data-i18n="rules.blindfireBody">
+                Pucanje bez pogleda u metu (iza ćoška, preko zaklona, u trku) je strogo
+                zabranjeno. Rafalna paljba je zabranjena na rastojanju manjem od 10m.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.disputeTitle">Sporne situacije</h3>
+              <p data-i18n="rules.disputeBody">
+                Svaka sporna situacija rešava se na svoju štetu — bez rasprave na terenu.
+                Sledi se fer-plej princip pre svega ostalog.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.substancesTitle">Alkohol i supstance</h3>
+              <p data-i18n="rules.substancesBody">
+                Konzumiranje alkohola i psihoaktivnih supstanci pre i tokom susreta je strogo
+                zabranjeno.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.energyTitle">Energija replika (MED)</h3>
+              <p data-i18n="rules.energyBody">
+                Pištolj/pumparica do 1.5J bez MED; jurišna do 1.5J, MED 10m za rafal; LMG do
+                1.9J, MED 20m; DMR do 2.3J (poluautomatski), MED 20m; snajper do 3.3J, MED 30m.
+                Hronografisanje je obavezno pre početka igre.
+              </p>
+            </div>
+          </div>
+
+          <p class="rules-source">
+            <a class="btn" href="pravilnik.html" data-i18n="rules.readMore">Pročitaj kompletan pravilnik →</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="tereni">
+        <div class="container">
+          <span class="eyebrow" data-i18n="fields.eyebrow">Gde igramo</span>
+          <h2 data-i18n="fields.title">Tereni</h2>
+          <p data-i18n="fields.intro">
+            Trenutno ažuriramo listu terena na kojima klub redovno igra i trenira. Ova sekcija će
+            uskoro sadržati imena terena, lokacije i tip svakog terena (šuma, CQB, urbano).
+          </p>
+          <p data-i18n="fields.cta">
+            Imaš predlog terena ili organizuješ airsoft lokaciju? Javi nam se preko kontakt
+            sekcije ispod.
+          </p>
+          <p><a class="btn" href="tereni-srbije.html" data-i18n="fields.readMore">Pogledaj terene širom Srbije →</a></p>
+        </div>
+      </section>
+
+      <section id="tim">
+        <div class="container">
+          <span class="eyebrow" data-i18n="team.eyebrow">Ekipa</span>
+          <h2 data-i18n="team.title">Tim</h2>
+          <p data-i18n="team.intro">
+            ЧОПОР okuplja igrače različitih uloga i iskustva — od jurišnika do preciznih strelaca.
+            Tim se trenutno popunjava; uskoro dodajemo profile članova i uloge u ekipi.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 data-i18n="team.role1Title">Juriš</h3>
+              <p data-i18n="team.role1Body">Prva linija, brzo napredovanje i preuzimanje pozicija.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="team.role2Title">Podrška (LMG/DMR)</h3>
+              <p data-i18n="team.role2Body">Pokrivanje tima vatrom i držanje linija na daljinu.</p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="team.role3Title">Izviđanje</h3>
+              <p data-i18n="team.role3Body">Praćenje terena i pravovremeno javljanje pozicija protivnika.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Pridruži se</span>
+          <h2 data-i18n="contact.title">Kontakt</h2>
+
+          <div class="contact-grid">
+            <ul class="contact-list">
+              <li>
+                <strong data-i18n="contact.emailLabel">Email</strong>
+                <a href="mailto:info@copor-airsoft.example">info@copor-airsoft.example</a>
+              </li>
+              <li>
+                <strong data-i18n="contact.locationLabel">Lokacija</strong>
+                <span data-i18n="contact.locationValue">Srbija</span>
+              </li>
+              <li>
+                <strong data-i18n="contact.socialLabel">Društvene mreže</strong>
+                <span data-i18n="contact.socialValue">Uskoro</span>
+              </li>
+            </ul>
+            <p data-i18n="contact.body">
+              Zainteresovan/a si za pridruživanje klubu? Pošalji nam email — javljamo se sa detaljima o
+              narednim treninzima i uslovima učlanjenja.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span data-i18n="footer.text">© 2026 ЧОПОР Airsoft klub. Sva prava zadržana.</span>
+      </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+      <img id="lightboxImage" src="" alt="" />
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

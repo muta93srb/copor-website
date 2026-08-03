@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("copor-theme") === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Srpski airsoft pravilnik — ЧОПОР</title>
+    <meta
+      name="description"
+      content="Sažetak Srpskog airsoft pravilnika (SASP) — bezbednosna pravila, energija replika i minimalna rastojanja dejstvovanja (MED)."
+    />
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/logo/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html#top">
+          <img src="assets/logo/copor-logo-web.webp" alt="ЧОПОР logo" width="42" height="48" />
+          <span class="brand-name">ЧОПОР</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html#about" data-i18n="nav.about">O klubu</a>
+          <a href="pravilnik.html" data-i18n="nav.pravilnik">Pravilnik</a>
+          <a href="tereni-srbije.html" data-i18n="nav.tereniSrbije">Tereni Srbije</a>
+          <a href="bratski-timovi.html" data-i18n="nav.bratskiTimovi">Bratski timovi</a>
+          <a href="asz-jug.html" data-i18n="nav.aszJug">ASZ Jug</a>
+          <a href="index.html#tim" data-i18n="nav.tim">Tim</a>
+          <a href="index.html#gallery" data-i18n="nav.gallery">Galerija</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" data-lang="sr-Cyrl">ЋИР</button>
+            <button type="button" data-lang="sr-Latn">LAT</button>
+            <button type="button" data-lang="en">EN</button>
+          </div>
+          <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle light/dark theme">☾</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <p class="breadcrumb"><a href="index.html" data-i18n="breadcrumb.home">Početna</a> / <span data-i18n="nav.pravilnik">Pravilnik</span></p>
+          <span class="eyebrow" data-i18n="rules.eyebrow">Bezbednost</span>
+          <h1 data-i18n="pravilnikPage.title">Srpski airsoft pravilnik (SASP)</h1>
+          <p data-i18n="pravilnikPage.intro">
+            Ovo je sažetak pravila koja se primenjuju na treninzima i operacijama našeg kluba,
+            zasnovan na Srpskom airsoft pravilniku (SASP) i dopunama koje koristi šira airsoft
+            zajednica. Cilj pravila je bezbedna, korektna i timska igra za sve učesnike.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 data-i18n="pravilnikPage.basicsTitle">Osnovna bezbednosna pravila</h2>
+          <div class="about-grid rules-grid">
+            <div class="about-card">
+              <h3 data-i18n="rules.eyewearTitle">Zaštitna oprema</h3>
+              <p data-i18n="pravilnikPage.eyewearBody">
+                Zaštitne naočare ili maska nose se na terenu u svakom trenutku i ne skidaju se ni
+                na trenutak, bez obzira na okolnosti.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.substancesTitle">Alkohol i supstance</h3>
+              <p data-i18n="pravilnikPage.substancesBody">
+                Konzumiranje alkohola i psihoaktivnih supstanci neposredno pre i za vreme susreta
+                je strogo zabranjeno.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.arrivalTitle">Dolazak i priprema</h3>
+              <p data-i18n="pravilnikPage.arrivalBody">
+                Na događaj se ne dolazi u vojnim/policijskim uniformama niti obeležjima MUP-a i
+                Ministarstva odbrane. Replike se nose zakočene i bez okvira, u torbi ili kutiji, do
+                početka igre.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.hitTitle">Pogodak i kill rag</h3>
+              <p data-i18n="pravilnikPage.hitBody">
+                Pogodak u bilo koji deo tela, opreme ili replike — uključujući od saigrača — se
+                priznaje. Igrač spušta repliku, javlja se glasno „POGOĐEN“ ili „HIT“, stavlja kill
+                rag (tkanina 40×40cm, fluo narandžasta ili crvena) na vidno mesto i najkraćim putem
+                napušta polje bez komunikacije sa igračima u igri. Za noćnu igru koristi se svetleći
+                kill rag (crveno svetlo u predelu glave/ramena).
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.blindfireTitle">Slepo pucanje i rafal</h3>
+              <p data-i18n="pravilnikPage.blindfireBody">
+                Pucanje bez pogleda u metu (iza ćoška, preko zaklona, u trku) je strogo zabranjeno.
+                Rafalna paljba je zabranjena na rastojanju manjem od 10m. Pravilo „bang bang“ ne
+                važi — protivnik mora biti stvarno pogođen kuglicom.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.specialHitsTitle">Cross kill, silent kill, rikošet</h3>
+              <p data-i18n="pravilnikPage.specialHitsBody">
+                Kada se dva igrača pogode praktično istovremeno (cross kill), oba napuštaju igru.
+                Silent kill se izvodi blagim dodirom ruke ili trening replike, bez glasnog javljanja
+                — žrtva tiho stavlja kill rag. Rikošet (kuglica koja prođe kroz granje/rastinje) se
+                ne računa kao pogodak.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="rules.disputeTitle">Sporne situacije</h3>
+              <p data-i18n="pravilnikPage.disputeBody">
+                Svaka sporna situacija rešava se na svoju štetu, bez rasprave na terenu. Ako
+                neko ne prizna pogodak, javite sebe kao pogođenog i obratite se moderatoru.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.conductTitle">Civili, životinje i okolina</h3>
+              <p data-i18n="pravilnikPage.conductBody">
+                Zabranjeno je ciljanje civila (fotografi, prolaznici) i životinja. Kuglice se ne
+                skupljaju sa poda, smeće se ne baca van za to predviđenih mesta. Dozvoljene su
+                isključivo sertifikovane dimne bombe — pirotehnika nije dozvoljena.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 data-i18n="pravilnikPage.energyTitle">Energija replika i minimalno rastojanje (MED)</h2>
+          <p data-i18n="pravilnikPage.energyIntro">
+            Vrednosti energije (J) i minimalnog rastojanja dejstvovanja (MED) po klasi replike.
+            Hronografisanje (isključivo kuglicama od 0.20g) je obavezno pre početka igre.
+          </p>
+          <div style="overflow-x: auto">
+            <table class="rules-table">
+              <thead>
+                <tr>
+                  <th data-i18n="pravilnikPage.tableClass">Klasa replike</th>
+                  <th data-i18n="pravilnikPage.tableEnergy">Energija</th>
+                  <th data-i18n="pravilnikPage.tableMed">MED</th>
+                  <th data-i18n="pravilnikPage.tableNote">Napomena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-i18n="pravilnikPage.classPistol">Pištolj / revolver</td>
+                  <td>≤ 1.5 J</td>
+                  <td data-i18n="pravilnikPage.medNone">bez MED</td>
+                  <td data-i18n="pravilnikPage.notePistol">0.90J za rafalnu paljbu</td>
+                </tr>
+                <tr>
+                  <td data-i18n="pravilnikPage.classShotgun">Pumparica</td>
+                  <td>≤ 1.5 J</td>
+                  <td data-i18n="pravilnikPage.medNone">bez MED</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td data-i18n="pravilnikPage.classAssault">Jurišna replika</td>
+                  <td>≤ 1.5 J</td>
+                  <td>10 m</td>
+                  <td data-i18n="pravilnikPage.noteAssault">MED važi za rafalnu paljbu; zabranjeno u zatvorenom</td>
+                </tr>
+                <tr>
+                  <td data-i18n="pravilnikPage.classLmg">LMG / mitraljez</td>
+                  <td>≤ 1.9 J</td>
+                  <td>20 m</td>
+                  <td data-i18n="pravilnikPage.noteLmg">Pucanje isključivo iz stoja/klečećeg/ležećeg stava</td>
+                </tr>
+                <tr>
+                  <td data-i18n="pravilnikPage.classDmr">DMR (precizna, poluautomatska)</td>
+                  <td>≤ 2.3 J</td>
+                  <td>20 m</td>
+                  <td data-i18n="pravilnikPage.noteDmr">Samo poluautomatski, min. 1s između hitaca, optika ≥4x</td>
+                </tr>
+                <tr>
+                  <td data-i18n="pravilnikPage.classSniper">Snajper</td>
+                  <td>≤ 3.3 J</td>
+                  <td>30 m</td>
+                  <td data-i18n="pravilnikPage.noteSniper">Optika ≥4x ili LPVO obavezna</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p data-i18n="pravilnikPage.energyFoonote">
+            Igrači sa dugim replikama (LMG/DMR/snajper) dužni su da poseduju sidearm za dejstvovanje
+            ispod propisanog MED-a.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 data-i18n="pravilnikPage.extrasTitle">Granate, svetla i dodatna oprema</h2>
+          <div class="about-grid rules-grid">
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.grenadesTitle">Granate</h3>
+              <p data-i18n="pravilnikPage.grenadesBody">
+                Dozvoljene su isključivo sertifikovane airsoft granate. Efekat granate važi u
+                krugu od 3m — igrač u tom dometu prijavljuje pogodak čak i bez direktnog udarca
+                kuglicom, osim ako je u potpunosti van vidokruga eksplozije.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.lightsTitle">Lampe i laseri</h3>
+              <p data-i18n="pravilnikPage.lightsBody">
+                Baterijske lampe do 2000 lumena su dozvoljene. Laseri i PEQ uređaji nisu
+                dozvoljeni. Crveni filter je rezervisan za noćni kill rag.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.shieldsTitle">Balistički štitovi</h3>
+              <p data-i18n="pravilnikPage.shieldsBody">
+                Dozvoljeni su isključivo štitovi koji verno predstavljaju realan model, sa masom
+                od najmanje 25% originala. Nosilac štita ograničen je na sidearm ili SMG repliku
+                kojom se dejstvuje jednom rukom, bez rafalne paljbe.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.dronesTitle">Dronovi i hladno oružje</h3>
+              <p data-i18n="pravilnikPage.dronesBody">
+                Dronovi i RC vozila dozvoljeni su isključivo za izviđanje — zabranjeno je
+                dejstvovati po njima. Pravo hladno i vatreno oružje je najstrože zabranjeno; na
+                terenu je dozvoljen samo manji nož ili multitool kao alat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <p class="rules-source" data-i18n-html="pravilnikPage.source">
+            Ovaj sažetak prati Srpski airsoft pravilnik (SASP) i pravilnik koji na svojim
+            događajima u Železniku primenjuje Beoshot airsoft zajednica —
+            <a
+              href="https://beoshot.rs/src/assets/pdf/AIRSOFT_PRAVILNIK_ZELEZNIK_2024.pdf"
+              target="_blank"
+              rel="noopener"
+              >pun tekst izvornog pravilnika (PDF)</a
+            >. Organizator svakog pojedinačnog događaja zadržava pravo da propiše dodatna ili
+            stroža pravila, koja se objašnjavaju pre početka igre.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span data-i18n="footer.text">© 2026 ЧОПОР Airsoft klub. Sva prava zadržana.</span>
+      </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
