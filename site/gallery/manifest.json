@@ -1,3 +1,12 @@
 {
-  "images": []
+  "images": [
+    {
+      "file": "copor-tim-na-terenu-1.jpg",
+      "caption": "Copor tim na terenu 1"
+    },
+    {
+      "file": "copor-tim-na-terenu-2.jpg",
+      "caption": "Copor tim na terenu 2"
+    }
+  ]
 }

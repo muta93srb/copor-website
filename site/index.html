@@ -46,7 +46,6 @@
         <nav class="main-nav" id="mainNav">
           <a href="index.html#about" data-i18n="nav.about">O klubu</a>
           <a href="pravilnik.html" data-i18n="nav.pravilnik">Pravilnik</a>
-          <a href="tereni-srbije.html" data-i18n="nav.tereniSrbije">Tereni Srbije</a>
           <a href="bratski-timovi.html" data-i18n="nav.bratskiTimovi">Bratski timovi</a>
           <a href="asz-jug.html" data-i18n="nav.aszJug">ASZ Jug</a>
           <a href="index.html#tim" data-i18n="nav.tim">Tim</a>
@@ -80,7 +79,7 @@
       <section id="about">
         <div class="container">
           <span class="eyebrow" data-i18n="about.eyebrow">O nama</span>
-          <h2 data-i18n="about.title">Ko je ЧОПОР</h2>
+          <h2 data-i18n="about.title">Šta je ЧОПОР</h2>
           <p data-i18n="about.body">
             ЧОПОР je airsoft klub posvećen taktičkoj igri, terenskoj disciplini i drugarstvu.
             Redovno organizujemo treninge i operacije, radimo na opremi i taktici, i uvek tražimo
@@ -125,9 +124,10 @@
           <span class="eyebrow" data-i18n="rules.eyebrow">Bezbednost</span>
           <h2 data-i18n="rules.title">Pravilnik</h2>
           <p data-i18n="rules.intro">
-            Naši treninzi i operacije prate Srpski Airsoft Pravilnik (SASP) i dopune koje se
-            primenjuju na događajima u organizaciji šire airsoft zajednice. Ispod je sažetak
-            najvažnijih bezbednosnih pravila — puna pravila se objašnjavaju pre svakog događaja.
+            Naši treninzi i operacije zasnovani su na Srpskom Airsoft Pravilniku (SASP) i dopunama
+            koje se primenjuju na događajima u organizaciji šire airsoft zajednice, uz pravila
+            specifična za naš klub. Ispod je sažetak najvažnijih bezbednosnih pravila — puna pravila
+            se objašnjavaju pre svakog događaja.
           </p>
 
           <div class="about-grid rules-grid">
@@ -142,16 +142,18 @@
               <h3 data-i18n="rules.hitTitle">Pogodak i kill rag</h3>
               <p data-i18n="rules.hitBody">
                 Pogodak u bilo koji deo tela, opreme ili replike (uključujući od saigrača) se
-                priznaje. Igrač spušta repliku, javlja se glasno „POGOĐEN“, stavlja kill rag
-                (40×40cm, fluo narandžast/crven) i najkraćim putem ide do spawn pozicije, bez
+                priznaje — samo se rikošet ne računa, a kuglica koja prođe kroz granje računa se kao
+                pogodak. Igrač spušta repliku, javlja se glasno „POGOĐEN“, stavlja kill rag
+                (40×40 cm, fluo narandžast/crven) i najkraćim putem ide do spawn pozicije, bez
                 komunikacije sa igračima u igri.
               </p>
             </div>
             <div class="about-card">
-              <h3 data-i18n="rules.blindfireTitle">Zabranjeno slepo pucanje</h3>
+              <h3 data-i18n="rules.blindfireTitle">Slepo pucanje i rafal</h3>
               <p data-i18n="rules.blindfireBody">
                 Pucanje bez pogleda u metu (iza ćoška, preko zaklona, u trku) je strogo
-                zabranjeno. Rafalna paljba je zabranjena na rastojanju manjem od 10m.
+                zabranjeno. Svaka vrsta automatske paljbe (rafal, burst) je zabranjena — dozvoljena
+                je samo pojedinačna paljba. Jedini izuzetak je LMG, kome je rafal dozvoljen.
               </p>
             </div>
             <div class="about-card">
@@ -164,16 +166,17 @@
             <div class="about-card">
               <h3 data-i18n="rules.substancesTitle">Alkohol i supstance</h3>
               <p data-i18n="rules.substancesBody">
-                Konzumiranje alkohola i psihoaktivnih supstanci pre i tokom susreta je strogo
-                zabranjeno.
+                Alkohol je dozvoljen. Konzumiranje psihoaktivnih supstanci pre i tokom susreta je
+                strogo zabranjeno.
               </p>
             </div>
             <div class="about-card">
               <h3 data-i18n="rules.energyTitle">Energija replika (MED)</h3>
               <p data-i18n="rules.energyBody">
-                Pištolj/pumparica do 1.5J bez MED; jurišna do 1.5J, MED 10m za rafal; LMG do
-                1.9J, MED 20m; DMR do 2.3J (poluautomatski), MED 20m; snajper do 3.3J, MED 30m.
-                Hronografisanje je obavezno pre početka igre.
+                Pištolj, pumparica i jurišna replika do 1.49 J (400 fps), bez MED; LMG do 1.88 J
+                (450 fps), MED 20 m; DMR do 2.32 J (500 fps), MED 20 m; snajper do 3.34 J (600 fps),
+                MED 30 m. Brzine važe za kuglice od 0.20 g, a hronografisanje je obavezno pre početka
+                igre.
               </p>
             </div>
           </div>
@@ -187,16 +190,71 @@
       <section id="tereni">
         <div class="container">
           <span class="eyebrow" data-i18n="fields.eyebrow">Gde igramo</span>
-          <h2 data-i18n="fields.title">Tereni</h2>
+          <h2 data-i18n="fields.title">Tereni na kojima igramo</h2>
           <p data-i18n="fields.intro">
-            Trenutno ažuriramo listu terena na kojima klub redovno igra i trenira. Ova sekcija će
-            uskoro sadržati imena terena, lokacije i tip svakog terena (šuma, CQB, urbano).
+            Redovno igramo i treniramo na terenima širom juga Srbije — od Niša do Vranja. Za tačnu
+            lokaciju i navigaciju otvori teren u Google mapama.
           </p>
+
+          <div class="fields-layout">
+            <!-- Decorative overview; the list below carries the same information and links. -->
+            <div class="fields-map" id="fieldsMap" aria-hidden="true"></div>
+            <ol class="fields-list">
+              <li class="field-card" data-lat="43.021955" data-lng="21.754665">
+                <span class="num-badge" aria-hidden="true">1</span>
+                <div>
+                  <h3 data-i18n="fields.f1Name">Pridvorica</h3>
+                  <p data-i18n="fields.f1Area">Opština Bojnik</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/g8zbTgTdo1dm3GWi7" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+              <li class="field-card" data-lat="42.919282" data-lng="21.742653">
+                <span class="num-badge" aria-hidden="true">2</span>
+                <div>
+                  <h3 data-i18n="fields.f2Name">Lebane</h3>
+                  <p data-i18n="fields.f2Area">Opština Lebane</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/g5A39Nf7XF2nKChe7" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+              <li class="field-card" data-lat="43.152681" data-lng="21.885573">
+                <span class="num-badge" aria-hidden="true">3</span>
+                <div>
+                  <h3 data-i18n="fields.f3Name">Brestovac</h3>
+                  <p data-i18n="fields.f3Area">Grad Leskovac</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/vr2BRzoJeeYX1xzcA" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+              <li class="field-card" data-lat="43.340042" data-lng="21.869778">
+                <span class="num-badge" aria-hidden="true">4</span>
+                <div>
+                  <h3 data-i18n="fields.f4Name">Crveni Krst</h3>
+                  <p data-i18n="fields.f4Area">Grad Niš</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/VL54d3isnXM76hQi8" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+              <li class="field-card" data-lat="43.404249" data-lng="21.792167">
+                <span class="num-badge" aria-hidden="true">5</span>
+                <div>
+                  <h3 data-i18n="fields.f5Name">Donja Toponica</h3>
+                  <p data-i18n="fields.f5Area">Grad Niš</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/MXNY22BDamGqP2vHA" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+              <li class="field-card" data-lat="42.530060" data-lng="21.839794">
+                <span class="num-badge" aria-hidden="true">6</span>
+                <div>
+                  <h3 data-i18n="fields.f6Name">Dubnica</h3>
+                  <p data-i18n="fields.f6Area">Grad Vranje</p>
+                </div>
+                <a class="item-link" href="https://maps.app.goo.gl/RMJ55NQGg9YSRvCs6" target="_blank" rel="noopener" data-i18n="fields.openMap">Otvori u Google mapama ↗</a>
+              </li>
+            </ol>
+          </div>
+
           <p data-i18n="fields.cta">
             Imaš predlog terena ili organizuješ airsoft lokaciju? Javi nam se preko kontakt
             sekcije ispod.
           </p>
-          <p><a class="btn" href="tereni-srbije.html" data-i18n="fields.readMore">Pogledaj terene širom Srbije →</a></p>
         </div>
       </section>
 
@@ -206,9 +264,38 @@
           <h2 data-i18n="team.title">Tim</h2>
           <p data-i18n="team.intro">
             ЧОПОР okuplja igrače različitih uloga i iskustva — od jurišnika do preciznih strelaca.
-            Tim se trenutno popunjava; uskoro dodajemo profile članova i uloge u ekipi.
+            Članovi su navedeni abecednim redom.
           </p>
 
+          <h3 class="subheading" data-i18n="team.membersTitle">Članovi</h3>
+          <ul class="member-grid">
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberAlexa">Alexa</span>
+            </li>
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberDojca">Dojča</span>
+            </li>
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberJovan">Jovan</span>
+            </li>
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberKocka">Kocka</span>
+            </li>
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberMihajlo">Mihajlo</span>
+            </li>
+            <li class="member-patch">
+              <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+              <span data-i18n="team.memberMuta">Muta</span>
+            </li>
+          </ul>
+
+          <h3 class="subheading" data-i18n="team.rolesTitle">Uloge u timu</h3>
           <div class="about-grid">
             <div class="about-card">
               <h3 data-i18n="team.role1Title">Juriš</h3>
@@ -226,6 +313,489 @@
         </div>
       </section>
 
+      <section id="uniforma">
+        <div class="container">
+          <span class="eyebrow" data-i18n="uniform.eyebrow">Oprema</span>
+          <h2 data-i18n="uniform.title">Uniforma kluba</h2>
+          <p data-i18n="uniform.intro">
+            Na treninzima i operacijama nastupamo u istoj uniformi: zelena combat bluza, taktičke
+            pantalone iste boje i braon HAIX čizme. Ispod je model uniforme sa linkovima ka svakom
+            komadu opreme.
+          </p>
+
+          <div class="uniform-layout">
+            <figure class="uniform-figure">
+              <!-- Illustration drawn after the product photos: Vogel combat shirt, Horus P-3 pants, HAIX Scout boots. -->
+              <svg class="uniform-svg" viewBox="0 0 340 660" aria-hidden="true">
+                <defs>
+                  <linearGradient id="uniformShade" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0.07" />
+                    <stop offset="0.55" stop-color="#000" stop-opacity="0" />
+                    <stop offset="1" stop-color="#000" stop-opacity="0.22" />
+                  </linearGradient>
+                  <g id="uniformBoot">
+                    <path fill="#8c5a30" d="M100 578h34l2 22H98z" />
+                    <path fill="#a46b3b" d="M97 596h40c5 8 7 18 5 30l-56 2c-2-10 2-24 11-32z" />
+                    <path fill="#5d4b3a" d="M88 612c4-6 50-6 54 0 2 6 1 12 0 15l-56 1c-1-6 0-12 2-16z" />
+                    <path fill="#857361" d="M110 588h14l2 22h-18z" />
+                    <path fill="none" stroke="#6e4128" stroke-width="1.8" stroke-linecap="round" d="M109 594l17 5m0-5l-17 5m0 5l17 5m0-5l-17 5" />
+                    <g fill="#2f2f2f">
+                      <circle cx="106" cy="594" r="1.7" />
+                      <circle cx="129" cy="594" r="1.7" />
+                      <circle cx="106" cy="604" r="1.7" />
+                      <circle cx="129" cy="604" r="1.7" />
+                    </g>
+                    <rect fill="#37302a" x="81" y="626" width="66" height="10" rx="3" />
+                  </g>
+                </defs>
+
+                <ellipse cx="150" cy="637" rx="80" ry="7" fill="#000" opacity="0.25" />
+
+                <!-- boots (HAIX Scout, brown) -->
+                <use href="#uniformBoot" />
+                <use href="#uniformBoot" transform="matrix(-1 0 0 1 300 0)" />
+
+                <!-- pants (Horus P-3 TCT, green) -->
+                <path fill="#5c5b45" d="M106 290L194 290C200 320 204 350 204 380L206 470L204 590L162 592L160 470L154 392Q150 380 146 392L140 470L138 592L96 590L94 470L96 380C96 350 100 320 106 290Z" />
+                <path fill="url(#uniformShade)" d="M106 290L194 290C200 320 204 350 204 380L206 470L204 590L162 592L160 470L154 392Q150 380 146 392L140 470L138 592L96 590L94 470L96 380C96 350 100 320 106 290Z" />
+                <g fill="none" stroke="#3f3e2e" stroke-width="1">
+                  <path d="M150 306V372" />
+                  <path stroke-dasharray="2.5 2" d="M141 306V350Q142 364 150 368" />
+                  <path d="M117 306C117 320 111 331 98 337M183 306C183 320 189 331 202 337" />
+                  <path d="M96 582L138 584M162 584L204 582" />
+                </g>
+                <path fill="#504f3b" d="M92 392L122 390L124 452L96 456Z" />
+                <path fill="#504f3b" d="M208 392L178 390L176 452L204 456Z" />
+                <path fill="none" stroke="#3f3e2e" stroke-width="1" d="M108 400L110 454M192 400L190 454" />
+                <path fill="#5c5b45" stroke="#3f3e2e" stroke-width="1" d="M91 384L123 381L124 399L92 402Z" />
+                <path fill="#5c5b45" stroke="#3f3e2e" stroke-width="1" d="M209 384L177 381L176 399L208 402Z" />
+                <rect x="185" y="386" width="16" height="3.4" fill="#c6363c" />
+                <rect x="185" y="389.3" width="16" height="3.4" fill="#0c4076" />
+                <rect x="185" y="392.6" width="16" height="3.4" fill="#f4f4f4" />
+                <path fill="#504f3b" d="M95 488L140 486L139 542L96 546Z" />
+                <path fill="#504f3b" d="M205 488L160 486L161 542L204 546Z" />
+                <path fill="none" stroke="#3f3e2e" stroke-width="1" stroke-dasharray="3 2" d="M96 492L139 490M97 541L138 538M204 492L161 490M203 541L162 538" />
+                <rect x="97" y="568" width="15" height="7" rx="1.5" fill="#8f8d7e" />
+                <rect x="188" y="568" width="15" height="7" rx="1.5" fill="#8f8d7e" />
+
+                <!-- combat shirt (Vogel, green) -->
+                <path fill="#56613f" d="M120 68C104 72 86 82 78 100L60 182L50 264L48 282Q66 288 84 284L86 266L94 192L106 140C112 118 116 96 120 68Z" />
+                <path fill="#56613f" d="M180 68C196 72 214 82 222 100L240 182L250 264L252 282Q234 288 216 284L214 266L206 192L194 140C188 118 184 96 180 68Z" />
+                <path fill="url(#uniformShade)" d="M180 68C196 72 214 82 222 100L240 182L250 264L252 282Q234 288 216 284L214 266L206 192L194 140C188 118 184 96 180 68Z" />
+                <path fill="#4a5436" d="M61 176L96 184L91 216L57 210Z" />
+                <path fill="#4a5436" d="M239 176L204 184L209 216L243 210Z" />
+                <path fill="#4a5436" d="M50 264L86 266L84 284Q66 288 48 282Z" />
+                <path fill="#4a5436" d="M250 264L214 266L216 284Q234 288 252 282Z" />
+                <rect x="56" y="270" width="12" height="8" rx="1.5" fill="#3b432b" />
+                <rect x="232" y="270" width="12" height="8" rx="1.5" fill="#3b432b" />
+                <g transform="rotate(12 86 135)">
+                  <rect x="74" y="118" width="24" height="34" rx="2" fill="#4a5436" />
+                  <rect x="74" y="118" width="24" height="4" fill="#3b432b" />
+                  <rect x="77" y="126" width="18" height="21" rx="1" fill="#434c31" />
+                </g>
+                <g transform="rotate(-12 214 135)">
+                  <rect x="202" y="118" width="24" height="34" rx="2" fill="#4a5436" />
+                  <rect x="202" y="118" width="24" height="4" fill="#3b432b" />
+                  <image href="assets/logo/copor-logo-web.webp" x="205" y="125" width="18" height="21" />
+                </g>
+                <path fill="#56613f" d="M120 70Q150 80 180 70C186 96 192 120 196 140C200 190 196 240 200 302Q150 312 100 302C104 240 100 190 104 140C108 120 114 96 120 70Z" />
+                <path fill="url(#uniformShade)" d="M120 70Q150 80 180 70C186 96 192 120 196 140C200 190 196 240 200 302Q150 312 100 302C104 240 100 190 104 140C108 120 114 96 120 70Z" />
+                <g fill="none" stroke="#3b432b">
+                  <path stroke-width="1.2" d="M120 70C114 96 108 120 104 140M180 70C186 96 192 120 196 140" />
+                  <path stroke-width="1" opacity="0.7" d="M114 150C117 200 113 250 116 304M186 150C183 200 187 250 184 304" />
+                  <path stroke-width="1" opacity="0.7" d="M101 294Q150 304 199 294" />
+                </g>
+                <path fill="#3b432b" d="M121 64C121 56 134 51 150 51C166 51 179 56 179 64Z" />
+                <ellipse cx="150" cy="63" rx="26" ry="6" fill="#23281a" />
+                <path fill="#56613f" d="M119 60Q150 74 181 60L182 76Q150 92 118 76Z" />
+                <path fill="none" stroke="#3b432b" stroke-width="1" d="M118 76Q150 92 182 76" />
+                <rect x="148.6" y="67" width="2.8" height="66" fill="#2c3220" />
+                <rect x="147" y="69" width="6" height="11" rx="1.5" fill="#1d2116" />
+
+                <!-- callouts, numbered like the list -->
+                <path class="callout-line" d="M226 214H298M192 470H298M196 614H298" />
+                <circle class="callout-dot" cx="226" cy="214" r="3" />
+                <circle class="callout-dot" cx="192" cy="470" r="3" />
+                <circle class="callout-dot" cx="196" cy="614" r="3" />
+                <circle class="callout-badge" cx="312" cy="214" r="13" />
+                <circle class="callout-badge" cx="312" cy="470" r="13" />
+                <circle class="callout-badge" cx="312" cy="614" r="13" />
+                <text class="callout-num" x="312" y="214">1</text>
+                <text class="callout-num" x="312" y="470">2</text>
+                <text class="callout-num" x="312" y="614">3</text>
+              </svg>
+              <figcaption data-i18n="uniform.caption">Model uniforme kluba ЧОПОР</figcaption>
+            </figure>
+
+            <ol class="uniform-list">
+              <li class="uniform-item">
+                <span class="num-badge" aria-hidden="true">1</span>
+                <div>
+                  <h3 data-i18n="uniform.shirtTitle">Combat bluza</h3>
+                  <p class="uniform-product" data-i18n="uniform.shirtProduct">Vogel Outdoor — Single Sword zelena taktička combat bluza</p>
+                  <p data-i18n="uniform.shirtBody">
+                    Mikroflis sa elastinom, brzo se suši. Kragna sa patentnim zatvaračem i džepovi sa
+                    čičak panelom na rukavima.
+                  </p>
+                  <a class="item-link" href="https://vogeloutdoor.com/product/vogel-zelena-combat-bluza-2/" target="_blank" rel="noopener" data-i18n="uniform.link">Pogledaj proizvod ↗</a>
+                </div>
+              </li>
+              <li class="uniform-item">
+                <span class="num-badge" aria-hidden="true">2</span>
+                <div>
+                  <h3 data-i18n="uniform.pantsTitle">Taktičke pantalone</h3>
+                  <p class="uniform-product" data-i18n="uniform.pantsProduct">Horus — Tactical Pants P-3 TCT, zelene</p>
+                  <p data-i18n="uniform.pantsBody">
+                    TenCate ripstop (65% poliester, 35% pamuk), vodoodbojne i otporne na vetar. Dva
+                    cargo džepa, ojačanja na mestima najvećeg habanja i regulacija širine struka i
+                    nogavica.
+                  </p>
+                  <a class="item-link" href="https://horus.rs/en/proizvod/2424/Tactical-Pants-P-3-TCT-green" target="_blank" rel="noopener" data-i18n="uniform.link">Pogledaj proizvod ↗</a>
+                </div>
+              </li>
+              <li class="uniform-item">
+                <span class="num-badge" aria-hidden="true">3</span>
+                <div>
+                  <h3 data-i18n="uniform.bootsTitle">Čizme</h3>
+                  <p class="uniform-product" data-i18n="uniform.bootsProduct">HAIX Scout, braon</p>
+                  <p data-i18n="uniform.bootsBody">Čizme srednje visine sa Vibram đonom i ojačanim vrhom.</p>
+                  <a class="item-link" href="https://www.haix.co.uk/haix-scout" target="_blank" rel="noopener" data-i18n="uniform.link">Pogledaj proizvod ↗</a>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="replike">
+        <div class="container">
+          <span class="eyebrow" data-i18n="replicas.eyebrow">Arsenal</span>
+          <h2 data-i18n="replicas.title">Naše replike</h2>
+          <p data-i18n="replicas.intro">
+            Klase replika sa kojima igramo — od jurišnih M4/AR i AK platformi do podrške i preciznih
+            replika. Svaka replika se hronografiše pre igre i mora da ostane u granicama svoje klase,
+            a automatska paljba dozvoljena je samo LMG-u.
+          </p>
+
+          <div class="replica-grid">
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-m4" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(11.036 59.15) scale(0.482)" fill="#000">
+                      <path d="M40 -14H160Q168 -14 162 -6L150 8Q146 12 140 14L60 58Q44 66 40 52Z" />
+                      <path d="M344 50H382Q388 50 388 56V72Q388 78 382 78H344Q338 78 338 72V56Q338 50 344 50Z" />
+                      <path d="M536 -7H552Q558 -7 558 -1V0Q558 6 552 6H536Q530 6 530 0V-1Q530 -7 536 -7Z" />
+                      <path d="M578 -7H594Q600 -7 600 -1V0Q600 6 594 6H578Q572 6 572 0V-1Q572 -7 578 -7Z" />
+                      <path d="M620 -7H636Q642 -7 642 -1V0Q642 6 636 6H620Q614 6 614 0V-1Q614 -7 620 -7Z" />
+                      <path d="M662 -7H678Q684 -7 684 -1V0Q684 6 678 6H662Q656 6 656 0V-1Q656 -7 662 -7Z" />
+                      <path d="M704 -7H720Q726 -7 726 -1V0Q726 6 720 6H704Q698 6 698 0V-1Q698 -7 704 -7Z" />
+                      <path d="M746 -7H762Q768 -7 768 -1V0Q768 6 762 6H746Q740 6 740 0V-1Q740 -7 746 -7Z" />
+                      <path d="M788 -7H804Q810 -7 810 -1V0Q810 6 804 6H788Q782 6 782 0V-1Q782 -7 788 -7Z" />
+                      <path d="M334 -88H418Q422 -88 422 -84V-66Q422 -62 418 -62H334Q330 -62 330 -66V-84Q330 -88 334 -88Z" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M18 -28V98" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M398 67H476" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M502 -30V24" />
+                      <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M272 -25H830" />
+                      <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M262 22H400" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-m4)">
+                    <g transform="translate(11.036 59.15) scale(0.482)">
+                      <path d="M4 -20Q4 -30 14 -30H182Q190 -30 192 -24L198 -18H272V14H206L196 24L120 44L30 96Q22 100 14 100H12Q4 100 4 92Z" />
+                      <path d="M249 -28H267Q270 -28 270 -25V-19Q270 -16 267 -16H249Q246 -16 246 -19V-25Q246 -28 249 -28Z" />
+                      <path d="M262 -24L270 -32H502V22H262Z" />
+                      <path d="M262 22H484V34L478 66H396L394 86H336Q330 86 330 80L304 146Q300 154 290 154H268Q256 154 258 142L284 48Q286 40 276 40H262Z" />
+                      <path d="M402 66H472Q478 140 496 214L438 226Q418 146 402 66Z" />
+                      <path d="M507 -32H825Q832 -32 832 -25V19Q832 26 825 26H507Q500 26 500 19V-25Q500 -32 507 -32Z" />
+                      <path d="M832 -8H892Q894 -8 894 -6V6Q894 8 892 8H832Q830 8 830 6V-6Q830 -8 832 -8Z" />
+                      <path d="M892 -12H944Q948 -12 948 -8V8Q948 12 944 12H892Q888 12 888 8V-8Q888 -12 892 -12Z" />
+                      <path d="M468 -32L474 -44H492L496 -32Z" />
+                      <path d="M800 -32L806 -44H822L826 -32Z" />
+                      <path d="M322 -60H432Q436 -60 436 -56V-36Q436 -32 432 -32H322Q318 -32 318 -36V-56Q318 -60 322 -60Z" />
+                      <path d="M316 -90Q316 -100 326 -100H426Q436 -100 436 -90V-58H316Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(11.036 59.15) scale(0.482)">
+                    <path d="M356 50Q362 62 357 74H352Q356 62 350 50Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.assaultTitle">Jurišne replike</h3>
+              <p data-i18n="replicas.assaultBody">M4/AR i AK platforme za igru na kratkim i srednjim rastojanjima.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 1.49 J<span class="spec-sub">400 fps</span></dd></div>
+                <div><dt>MED</dt><dd data-i18n="replicas.medNone">nema</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd data-i18n="replicas.fireSingle">pojedinačna</dd></div>
+              </dl>
+            </article>
+
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-lmg" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(7.253 59.87) scale(0.437)" fill="#000">
+                      <path d="M44 -20L222 -18Q232 -18 226 -8L214 12Q210 18 200 22L66 84Q44 94 44 72Z" />
+                      <path d="M366 56H404Q410 56 410 62V72Q410 78 404 78H366Q360 78 360 72V62Q360 56 366 56Z" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M20 -38V126" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M354 -52H590" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M264 -34V48" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M432 52H596" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M436 80H594" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M500 92V200M548 92V200" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M592 -32V42" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-lmg)">
+                    <g transform="translate(7.253 59.87) scale(0.437)">
+                      <path d="M6 -30Q6 -40 16 -40L240 -34H264V36L236 40L40 128H16Q6 128 6 118Z" />
+                      <path d="M262 -40L276 -52H592V50H262Z" />
+                      <path d="M352 -52L372 -74H592V-52Z" />
+                      <path d="M364 -88H376Q378 -88 378 -86V-74Q378 -72 376 -72H364Q362 -72 362 -74V-86Q362 -88 364 -88Z" />
+                      <path d="M300 50H420V60L416 86H358Q350 86 350 80L330 150Q326 160 314 160H292Q280 160 282 148L300 60Z" />
+                      <path d="M430 50H590L598 206Q598 214 590 214H440Q432 214 432 206Z" />
+                      <path d="M600 -34H714Q724 -34 724 -24V34Q724 44 714 44H600Q590 44 590 34V-24Q590 -34 600 -34Z" />
+                      <path d="M726 12H864Q870 12 870 18V24Q870 30 864 30H726Q720 30 720 24V18Q720 12 726 12Z" />
+                      <path d="M723 -9H1009Q1012 -9 1012 -6V6Q1012 9 1009 9H723Q720 9 720 6V-6Q720 -9 723 -9Z" />
+                      <path d="M1011 -13H1057Q1062 -13 1062 -8V8Q1062 13 1057 13H1011Q1006 13 1006 8V-8Q1006 -13 1011 -13Z" />
+                      <path d="M948 -9L952 -56H964L968 -9Z" />
+                      <path d="M762 -9L776 -76H858L872 -9H856L846 -60H788L778 -9Z" />
+                      <path d="M851 10H883Q888 10 888 15V33Q888 38 883 38H851Q846 38 846 33V15Q846 10 851 10Z" />
+                      <path d="M852 30H866L816 214H802Z" />
+                      <path d="M868 30H882L934 214H920Z" />
+                      <path d="M796 210H818Q822 210 822 214V218Q822 222 818 222H796Q792 222 792 218V214Q792 210 796 210Z" />
+                      <path d="M918 210H940Q944 210 944 214V218Q944 222 940 222H918Q914 222 914 218V214Q914 210 918 210Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(7.253 59.87) scale(0.437)">
+                    <path d="M376 56Q382 66 377 76H372Q376 66 370 56Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.lmgTitle">LMG / podrška</h3>
+              <p data-i18n="replicas.lmgBody">Laki mitraljezi za pokrivanje tima vatrom i držanje linija — jedina klasa kojoj je dozvoljen rafal.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 1.88 J<span class="spec-sub">450 fps</span></dd></div>
+                <div><dt>MED</dt><dd>20 m</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd class="spec-auto" data-i18n="replicas.fireAuto">rafal dozvoljen</dd></div>
+              </dl>
+            </article>
+
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-dmr" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(7.404 76.036) scale(0.399)" fill="#000">
+                      <path d="M44 -20H150Q160 -20 154 -10L112 48Q104 60 92 68L54 92Q40 100 40 86Z" />
+                      <path d="M392 52H430Q436 52 436 58V78Q436 84 430 84H392Q386 84 386 78V58Q386 52 392 52Z" />
+                      <path d="M598 -7H616Q622 -7 622 -1V0Q622 6 616 6H598Q592 6 592 0V-1Q592 -7 598 -7Z" />
+                      <path d="M642 -7H660Q666 -7 666 -1V0Q666 6 660 6H642Q636 6 636 0V-1Q636 -7 642 -7Z" />
+                      <path d="M686 -7H704Q710 -7 710 -1V0Q710 6 704 6H686Q680 6 680 0V-1Q680 -7 686 -7Z" />
+                      <path d="M730 -7H748Q754 -7 754 -1V0Q754 6 748 6H730Q724 6 724 0V-1Q724 -7 730 -7Z" />
+                      <path d="M774 -7H792Q798 -7 798 -1V0Q798 6 792 6H774Q768 6 768 0V-1Q768 -7 774 -7Z" />
+                      <path d="M818 -7H836Q842 -7 842 -1V0Q842 6 836 6H818Q812 6 812 0V-1Q812 -7 818 -7Z" />
+                      <path d="M862 -7H880Q886 -7 886 -1V0Q886 6 880 6H862Q856 6 856 0V-1Q856 -7 862 -7Z" />
+                      <path d="M906 -7H924Q930 -7 930 -1V0Q930 6 924 6H906Q900 6 900 0V-1Q900 -7 906 -7Z" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M22 -46V126" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M40 -33H222" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M440 73H536" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M562 -32V28" />
+                      <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M302 -25H962" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M1014 -19V19" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M330 -92V-48" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-dmr)">
+                    <g transform="translate(7.404 76.036) scale(0.399)">
+                      <path d="M6 -36Q6 -48 18 -48H226Q236 -48 240 -40L248 -20H302V18H244L232 28H156L84 118Q76 128 64 128H18Q6 128 6 116Z" />
+                      <path d="M281 -30H297Q300 -30 300 -27V-21Q300 -18 297 -18H281Q278 -18 278 -21V-27Q278 -30 281 -30Z" />
+                      <path d="M292 -26L300 -34H562V24H292Z" />
+                      <path d="M300 24H538V36L532 72H442L440 92H384Q378 92 378 86L348 152Q344 160 334 160H312Q300 160 302 148L328 50Q330 42 320 42H300Z" />
+                      <path d="M446 72H526L532 170Q532 178 524 178H454Q446 178 446 170Z" />
+                      <path d="M568 -34H956Q964 -34 964 -26V22Q964 30 956 30H568Q560 30 560 22V-26Q560 -34 568 -34Z" />
+                      <path d="M962 -9H1002Q1004 -9 1004 -7V7Q1004 9 1002 9H962Q960 9 960 7V-7Q960 -9 962 -9Z" />
+                      <path d="M1010 -21H1150Q1162 -21 1162 -9V9Q1162 21 1150 21H1010Q998 21 998 9V-9Q998 -21 1010 -21Z" />
+                      <path d="M365 -42H517Q520 -42 520 -39V-35Q520 -32 517 -32H365Q362 -32 362 -35V-39Q362 -42 365 -42Z" />
+                      <path d="M387 -94H403Q406 -94 406 -91V-43Q406 -40 403 -40H387Q384 -40 384 -43V-91Q384 -94 387 -94Z" />
+                      <path d="M479 -94H495Q498 -94 498 -91V-43Q498 -40 495 -40H479Q476 -40 476 -43V-91Q476 -94 479 -94Z" />
+                      <path d="M295 -96H301Q306 -96 306 -91V-49Q306 -44 301 -44H295Q290 -44 290 -49V-91Q290 -96 295 -96Z" />
+                      <path d="M304 -94L352 -86V-54L304 -46Z" />
+                      <path d="M356 -85H534Q540 -85 540 -79V-61Q540 -55 534 -55H356Q350 -55 350 -61V-79Q350 -85 356 -85Z" />
+                      <path d="M530 -85L552 -98H622Q630 -98 630 -90V-50Q630 -42 622 -42H552L530 -55Z" />
+                      <path d="M430 -110H452Q456 -110 456 -106V-88Q456 -84 452 -84H430Q426 -84 426 -88V-106Q426 -110 430 -110Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(7.404 76.036) scale(0.399)">
+                    <path d="M402 52Q408 66 403 80H398Q402 66 396 52Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.dmrTitle">DMR</h3>
+              <p data-i18n="replicas.dmrBody">Precizne replike sa optikom od najmanje 4x i razmakom od najmanje 1 s između hitaca.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 2.32 J<span class="spec-sub">500 fps</span></dd></div>
+                <div><dt>MED</dt><dd>20 m</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd data-i18n="replicas.fireSingle">pojedinačna</dd></div>
+              </dl>
+            </article>
+
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-sniper" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(8 67.034) scale(0.389)" fill="#000">
+                      <path d="M284 30H384Q396 30 394 42L388 76Q386 82 378 82H282Q272 82 274 72Z" />
+                      <path d="M40 -32L226 -34Q240 -34 236 -22L224 24Q220 34 208 40L80 110Q50 126 46 96Z" />
+                      <path d="M462 62H496Q502 62 502 68V86Q502 92 496 92H462Q456 92 456 86V68Q456 62 462 62Z" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M318 -100V-56" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M444 -98H484" />
+                      <path fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" d="M582 -12V12" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-sniper)">
+                    <g transform="translate(8 67.034) scale(0.389)">
+                      <path d="M0 -8Q0 -26 16 -30Q40 -48 90 -48H236Q258 -48 264 -30L272 18H736Q756 18 756 36L752 58H512L508 92Q506 100 496 100H452L446 98L420 176Q416 186 404 186H372Q360 186 364 174L384 104Q386 94 374 94H262L60 160H18Q0 160 0 142Z" />
+                      <path d="M278 -20H572Q582 -20 582 -10V10Q582 20 572 20H278Q268 20 268 10V-10Q268 -20 278 -20Z" />
+                      <path d="M254 -16H270Q276 -16 276 -10V8Q276 14 270 14H254Q248 14 248 8V-10Q248 -16 254 -16Z" />
+                      <path d="M524 50H576Q580 50 580 54V90Q580 94 576 94H524Q520 94 520 90V54Q520 50 524 50Z" />
+                      <path d="M580 -14L1082 -10V10L580 14Z" />
+                      <path d="M1084 -22H1178Q1192 -22 1192 -8V8Q1192 22 1178 22H1084Q1070 22 1070 8V-8Q1070 -22 1084 -22Z" />
+                      <path d="M302 -28H598Q600 -28 600 -26V-20Q600 -18 598 -18H302Q300 -18 300 -20V-26Q300 -28 302 -28Z" />
+                      <path d="M353 -98H369Q372 -98 372 -95V-21Q372 -18 369 -18H353Q350 -18 350 -21V-95Q350 -98 353 -98Z" />
+                      <path d="M523 -98H539Q542 -98 542 -95V-21Q542 -18 539 -18H523Q520 -18 520 -21V-95Q520 -98 523 -98Z" />
+                      <path d="M287 -106H291Q296 -106 296 -101V-55Q296 -50 291 -50H287Q282 -50 282 -55V-101Q282 -106 287 -106Z" />
+                      <path d="M292 -104L356 -97V-59L292 -52Z" />
+                      <path d="M362 -93H612Q620 -93 620 -85V-71Q620 -63 612 -63H362Q354 -63 354 -71V-85Q354 -93 362 -93Z" />
+                      <path d="M600 -93L632 -116H730Q738 -116 738 -108V-48Q738 -40 730 -40H632L600 -63Z" />
+                      <path d="M449 -120H479Q484 -120 484 -115V-95Q484 -90 479 -90H449Q444 -90 444 -95V-115Q444 -120 449 -120Z" />
+                      <path d="M705 50H733Q738 50 738 55V71Q738 76 733 76H705Q700 76 700 71V55Q700 50 705 50Z" />
+                      <path d="M704 70H718L668 228H654Z" />
+                      <path d="M722 70H736L790 228H776Z" />
+                      <path d="M648 224H670Q674 224 674 228V232Q674 236 670 236H648Q644 236 644 232V228Q644 224 648 224Z" />
+                      <path d="M774 224H796Q800 224 800 228V232Q800 236 796 236H774Q770 236 770 232V228Q770 224 774 224Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(8 67.034) scale(0.389)">
+                    <path d="M344 4H360L340 44H324Z" />
+                    <path d="M316 48a14 14 0 1 0 28 0a14 14 0 1 0 -28 0Z" />
+                    <path d="M472 62Q478 76 473 88H468Q472 76 466 62Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.sniperTitle">Snajper</h3>
+              <p data-i18n="replicas.sniperBody">Replike za dejstvovanje na najveće daljine, uz obaveznu optiku od najmanje 4x ili LPVO.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 3.34 J<span class="spec-sub">600 fps</span></dd></div>
+                <div><dt>MED</dt><dd>30 m</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd data-i18n="replicas.fireSingle">pojedinačna</dd></div>
+              </dl>
+            </article>
+
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-pistol" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(151.899 19.717) scale(0.99)" fill="#000">
+                      <path d="M96 46H118Q124 46 124 52V64Q124 70 118 70H96Q90 70 90 64V52Q90 46 96 46Z" />
+                      <path d="M75.5 96a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+                      <path d="M69.5 113a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+                      <path d="M63.5 130a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+                      <path d="M143 38H149Q150 38 150 39V45Q150 46 149 46H143Q142 46 142 45V39Q142 38 143 38Z" />
+                      <path d="M159 38H165Q166 38 166 39V45Q166 46 165 46H159Q158 46 158 45V39Q158 38 159 38Z" />
+                      <path d="M73 5H111Q114 5 114 8V12Q114 15 111 15H73Q70 15 70 12V8Q70 5 73 5Z" />
+                      <path fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" d="M14 7V25M22 7V25M30 7V25M38 7V25M46 7V25" />
+                      <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M88 31H182" />
+                      <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M-6 140H62" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-pistol)">
+                    <g transform="translate(151.899 19.717) scale(0.99)">
+                      <path d="M4 6Q4 0 10 0H178Q186 0 186 8V22L180 30H4Z" />
+                      <path d="M10 0L12 -8H26L28 0Z" />
+                      <path d="M170 0L171 -7H177L178 0Z" />
+                      <path d="M12 30H182V44H132L134 50L132 70Q131 76 124 76H92Q86 76 84 80L64 138Q62 144 54 144H2Q-8 144 -6 134L16 46L2 40Q-2 36 4 32Z" />
+                      <path d="M-8 139H62L60 150H-6Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(151.899 19.717) scale(0.99)">
+                    <path d="M104 46Q110 55 106 65H101Q104 55 98 46Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.pistolTitle">Pištolji</h3>
+              <p data-i18n="replicas.pistolBody">Sidearm — obavezan uz LMG, DMR i snajper, za dejstvovanje ispod propisanog MED-a.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 1.49 J<span class="spec-sub">400 fps</span></dd></div>
+                <div><dt>MED</dt><dd data-i18n="replicas.medNone">nema</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd data-i18n="replicas.fireSingle">pojedinačna</dd></div>
+              </dl>
+            </article>
+
+            <article class="replica-card">
+              <svg class="replica-art" viewBox="0 0 480 180" aria-hidden="true">
+                <defs>
+                  <mask id="rep-cut-shotgun" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+                    <rect width="480" height="180" fill="#fff" />
+                    <g transform="translate(9 64.18) scale(0.461)" fill="#000">
+                      <path d="M391 44H433Q440 44 440 51V63Q440 70 433 70H391Q384 70 384 63V51Q384 44 391 44Z" />
+                      <path d="M424 -22H488Q492 -22 492 -18V-8Q492 -4 488 -4H424Q420 -4 420 -8V-18Q420 -22 424 -22Z" />
+                      <path d="M616 -4H617Q621 -4 621 0V28Q621 32 617 32H616Q612 32 612 28V0Q612 -4 616 -4Z" />
+                      <path d="M640 -4H641Q645 -4 645 0V28Q645 32 641 32H640Q636 32 636 28V0Q636 -4 640 -4Z" />
+                      <path d="M664 -4H665Q669 -4 669 0V28Q669 32 665 32H664Q660 32 660 28V0Q660 -4 664 -4Z" />
+                      <path d="M688 -4H689Q693 -4 693 0V28Q693 32 689 32H688Q684 32 684 28V0Q684 -4 688 -4Z" />
+                      <path d="M712 -4H713Q717 -4 717 0V28Q717 32 713 32H712Q708 32 708 28V0Q708 -4 712 -4Z" />
+                      <path d="M736 -4H737Q741 -4 741 0V28Q741 32 737 32H736Q732 32 732 28V0Q732 -4 736 -4Z" />
+                      <path d="M760 -4H761Q765 -4 765 0V28Q765 32 761 32H760Q756 32 756 28V0Q756 -4 760 -4Z" />
+                      <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M20 4L28 144" />
+                    </g>
+                  </mask>
+                </defs>
+                <g fill="currentColor">
+                  <g mask="url(#rep-cut-shotgun)">
+                    <g transform="translate(9 64.18) scale(0.461)">
+                      <path d="M2 14Q0 4 10 2L250 -18Q290 -22 320 -20L350 -24V36L330 40Q300 44 290 58Q282 72 262 74L34 146Q22 150 14 146L4 142Z" />
+                      <path d="M346 -26Q350 -34 362 -34H540V36H346Z" />
+                      <path d="M368 36H452L450 46L446 70Q444 78 436 78H386Q376 78 374 70Z" />
+                      <path d="M538 -32L1000 -30V-12L538 -10Z" />
+                      <path d="M986 -34a4 4 0 1 0 8 0a4 4 0 1 0 -8 0Z" />
+                      <path d="M542 -6H868Q872 -6 872 -2V12Q872 16 868 16H542Q538 16 538 12V-2Q538 -6 542 -6Z" />
+                      <path d="M871 -8H889Q896 -8 896 -1V11Q896 18 889 18H871Q864 18 864 11V-1Q864 -8 871 -8Z" />
+                      <path d="M837 -36H851Q856 -36 856 -31V17Q856 22 851 22H837Q832 22 832 17V-31Q832 -36 837 -36Z" />
+                      <path d="M599 -12H771Q780 -12 780 -3V31Q780 40 771 40H599Q590 40 590 31V-3Q590 -12 599 -12Z" />
+                    </g>
+                  </g>
+                  <g transform="translate(9 64.18) scale(0.461)">
+                    <path d="M406 44Q412 55 408 66H403Q406 55 400 44Z" />
+                  </g>
+                </g>
+              </svg>
+              <h3 data-i18n="replicas.shotgunTitle">Pumparice</h3>
+              <p data-i18n="replicas.shotgunBody">Replike za blisku borbu i CQB.</p>
+              <dl class="replica-specs">
+                <div><dt data-i18n="replicas.specEnergy">Energija</dt><dd>≤ 1.49 J<span class="spec-sub">400 fps</span></dd></div>
+                <div><dt>MED</dt><dd data-i18n="replicas.medNone">nema</dd></div>
+                <div><dt data-i18n="replicas.specFire">Paljba</dt><dd data-i18n="replicas.fireSingle">pojedinačna</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="contact">
         <div class="container">
           <span class="eyebrow" data-i18n="contact.eyebrow">Pridruži se</span>
@@ -239,11 +809,11 @@
               </li>
               <li>
                 <strong data-i18n="contact.locationLabel">Lokacija</strong>
-                <span data-i18n="contact.locationValue">Srbija</span>
+                <span data-i18n="contact.locationValue">Leskovac, Srbija</span>
               </li>
               <li>
                 <strong data-i18n="contact.socialLabel">Društvene mreže</strong>
-                <span data-i18n="contact.socialValue">Uskoro</span>
+                <a href="https://www.instagram.com/ast.copor/" target="_blank" rel="noopener">Instagram · @ast.copor</a>
               </li>
             </ul>
             <p data-i18n="contact.body">

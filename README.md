@@ -5,10 +5,11 @@ Fully static club website, hosted for free on GitHub Pages.
 ## Structure
 
 - `site/` — the deployed website (plain HTML/CSS/JS, no build step required to run it).
-  - `index.html`, `pravilnik.html`, `tereni-srbije.html`, `bratski-timovi.html`, `asz-jug.html` — pages.
+  - `index.html`, `pravilnik.html`, `bratski-timovi.html`, `asz-jug.html` — pages.
   - `i18n/` — translation dictionaries (`sr-Cyrl.json`, `sr-Latn.json`, `en.json`); language switcher in the header.
   - `gallery/images/` — **drop photos here.** `gallery/manifest.json` is auto-generated on every deploy (see below) — you never edit it by hand.
   - `assets/logo/` — web-sized logo files only (favicon, header logo, social preview).
+  - `assets/teams/` — logos of the allied teams shown on `bratski-timovi.html`.
 - `print/` — the print-ready logo files (full color, single-color, vector, large PNG) for t-shirts and plastic/engraving — hand this folder to a print shop. **Not part of the deployed site.** See [print/README.md](print/README.md).
 - `assets/logo/` (repo root) — the full logo asset pipeline output, including the `print/` files plus web-only versions. See [assets/logo/README.md](assets/logo/README.md).
 - `images/` — original source mockups the logo was extracted from.

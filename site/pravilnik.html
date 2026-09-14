@@ -39,7 +39,6 @@
         <nav class="main-nav" id="mainNav">
           <a href="index.html#about" data-i18n="nav.about">O klubu</a>
           <a href="pravilnik.html" data-i18n="nav.pravilnik">Pravilnik</a>
-          <a href="tereni-srbije.html" data-i18n="nav.tereniSrbije">Tereni Srbije</a>
           <a href="bratski-timovi.html" data-i18n="nav.bratskiTimovi">Bratski timovi</a>
           <a href="asz-jug.html" data-i18n="nav.aszJug">ASZ Jug</a>
           <a href="index.html#tim" data-i18n="nav.tim">Tim</a>
@@ -83,8 +82,8 @@
             <div class="about-card">
               <h3 data-i18n="pravilnikPage.substancesTitle">Alkohol i supstance</h3>
               <p data-i18n="pravilnikPage.substancesBody">
-                Konzumiranje alkohola i psihoaktivnih supstanci neposredno pre i za vreme susreta
-                je strogo zabranjeno.
+                Alkohol je dozvoljen. Konzumiranje psihoaktivnih supstanci neposredno pre i za vreme
+                susreta je strogo zabranjeno.
               </p>
             </div>
             <div class="about-card">
@@ -100,17 +99,24 @@
               <p data-i18n="pravilnikPage.hitBody">
                 Pogodak u bilo koji deo tela, opreme ili replike — uključujući od saigrača — se
                 priznaje. Igrač spušta repliku, javlja se glasno „POGOĐEN“ ili „HIT“, stavlja kill
-                rag (tkanina 40×40cm, fluo narandžasta ili crvena) na vidno mesto i najkraćim putem
+                rag (tkanina 40×40 cm, fluo narandžasta ili crvena) na vidno mesto i najkraćim putem
                 napušta polje bez komunikacije sa igračima u igri. Za noćnu igru koristi se svetleći
                 kill rag (crveno svetlo u predelu glave/ramena).
               </p>
             </div>
             <div class="about-card">
-              <h3 data-i18n="rules.blindfireTitle">Slepo pucanje i rafal</h3>
+              <h3 data-i18n="pravilnikPage.blindfireTitle">Slepo pucanje</h3>
               <p data-i18n="pravilnikPage.blindfireBody">
                 Pucanje bez pogleda u metu (iza ćoška, preko zaklona, u trku) je strogo zabranjeno.
-                Rafalna paljba je zabranjena na rastojanju manjem od 10m. Pravilo „bang bang“ ne
-                važi — protivnik mora biti stvarno pogođen kuglicom.
+                Pravilo „bang bang“ ne važi — protivnik mora biti stvarno pogođen kuglicom.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3 data-i18n="pravilnikPage.fireModeTitle">Režim paljbe</h3>
+              <p data-i18n="pravilnikPage.fireModeBody">
+                Svaka vrsta automatske paljbe — rafal (full auto) i burst — zabranjena je za sve
+                replike. Dozvoljena je isključivo pojedinačna (poluautomatska) paljba: jedan hitac po
+                povlačenju okidača. Jedini izuzetak je LMG, kome je rafal dozvoljen.
               </p>
             </div>
             <div class="about-card">
@@ -118,8 +124,8 @@
               <p data-i18n="pravilnikPage.specialHitsBody">
                 Kada se dva igrača pogode praktično istovremeno (cross kill), oba napuštaju igru.
                 Silent kill se izvodi blagim dodirom ruke ili trening replike, bez glasnog javljanja
-                — žrtva tiho stavlja kill rag. Rikošet (kuglica koja prođe kroz granje/rastinje) se
-                ne računa kao pogodak.
+                — žrtva tiho stavlja kill rag. Samo se rikošet (odbijena kuglica) ne računa kao
+                pogodak — kuglica koja prođe kroz granje ili rastinje računa se kao pogodak.
               </p>
             </div>
             <div class="about-card">
@@ -145,8 +151,9 @@
         <div class="container">
           <h2 data-i18n="pravilnikPage.energyTitle">Energija replika i minimalno rastojanje (MED)</h2>
           <p data-i18n="pravilnikPage.energyIntro">
-            Vrednosti energije (J) i minimalnog rastojanja dejstvovanja (MED) po klasi replike.
-            Hronografisanje (isključivo kuglicama od 0.20g) je obavezno pre početka igre.
+            Vrednosti energije (J), odgovarajuće brzine sa kuglicama od 0.20 g (fps) i minimalno
+            rastojanje dejstvovanja (MED) po klasi replike. Hronografisanje (isključivo kuglicama od
+            0.20 g) je obavezno pre početka igre. Automatska paljba dozvoljena je samo LMG-u.
           </p>
           <div style="overflow-x: auto">
             <table class="rules-table">
@@ -154,6 +161,7 @@
                 <tr>
                   <th data-i18n="pravilnikPage.tableClass">Klasa replike</th>
                   <th data-i18n="pravilnikPage.tableEnergy">Energija</th>
+                  <th data-i18n-html="pravilnikPage.tableFps">Brzina <span class="unit">(0.20 g)</span></th>
                   <th data-i18n="pravilnikPage.tableMed">MED</th>
                   <th data-i18n="pravilnikPage.tableNote">Napomena</th>
                 </tr>
@@ -161,37 +169,43 @@
               <tbody>
                 <tr>
                   <td data-i18n="pravilnikPage.classPistol">Pištolj / revolver</td>
-                  <td>≤ 1.5 J</td>
+                  <td>≤ 1.49 J</td>
+                  <td>400 fps</td>
                   <td data-i18n="pravilnikPage.medNone">bez MED</td>
-                  <td data-i18n="pravilnikPage.notePistol">0.90J za rafalnu paljbu</td>
+                  <td data-i18n="pravilnikPage.notePistol">Samo pojedinačna paljba</td>
                 </tr>
                 <tr>
                   <td data-i18n="pravilnikPage.classShotgun">Pumparica</td>
-                  <td>≤ 1.5 J</td>
+                  <td>≤ 1.49 J</td>
+                  <td>400 fps</td>
                   <td data-i18n="pravilnikPage.medNone">bez MED</td>
                   <td>—</td>
                 </tr>
                 <tr>
                   <td data-i18n="pravilnikPage.classAssault">Jurišna replika</td>
-                  <td>≤ 1.5 J</td>
-                  <td>10 m</td>
-                  <td data-i18n="pravilnikPage.noteAssault">MED važi za rafalnu paljbu; zabranjeno u zatvorenom</td>
+                  <td>≤ 1.49 J</td>
+                  <td>400 fps</td>
+                  <td data-i18n="pravilnikPage.medNone">bez MED</td>
+                  <td data-i18n="pravilnikPage.noteAssault">Samo pojedinačna paljba</td>
                 </tr>
                 <tr>
                   <td data-i18n="pravilnikPage.classLmg">LMG / mitraljez</td>
-                  <td>≤ 1.9 J</td>
+                  <td>≤ 1.88 J</td>
+                  <td>450 fps</td>
                   <td>20 m</td>
-                  <td data-i18n="pravilnikPage.noteLmg">Pucanje isključivo iz stoja/klečećeg/ležećeg stava</td>
+                  <td data-i18n="pravilnikPage.noteLmg">Jedina klasa kojoj je dozvoljen rafal; pucanje isključivo iz stoja/klečećeg/ležećeg stava</td>
                 </tr>
                 <tr>
                   <td data-i18n="pravilnikPage.classDmr">DMR (precizna, poluautomatska)</td>
-                  <td>≤ 2.3 J</td>
+                  <td>≤ 2.32 J</td>
+                  <td>500 fps</td>
                   <td>20 m</td>
-                  <td data-i18n="pravilnikPage.noteDmr">Samo poluautomatski, min. 1s između hitaca, optika ≥4x</td>
+                  <td data-i18n="pravilnikPage.noteDmr">Samo pojedinačna paljba, min. 1 s između hitaca, optika ≥4x</td>
                 </tr>
                 <tr>
                   <td data-i18n="pravilnikPage.classSniper">Snajper</td>
-                  <td>≤ 3.3 J</td>
+                  <td>≤ 3.34 J</td>
+                  <td>600 fps</td>
                   <td>30 m</td>
                   <td data-i18n="pravilnikPage.noteSniper">Optika ≥4x ili LPVO obavezna</td>
                 </tr>
@@ -213,7 +227,7 @@
               <h3 data-i18n="pravilnikPage.grenadesTitle">Granate</h3>
               <p data-i18n="pravilnikPage.grenadesBody">
                 Dozvoljene su isključivo sertifikovane airsoft granate. Efekat granate važi u
-                krugu od 3m — igrač u tom dometu prijavljuje pogodak čak i bez direktnog udarca
+                krugu od 5 m — igrač u tom dometu prijavljuje pogodak čak i bez direktnog udarca
                 kuglicom, osim ako je u potpunosti van vidokruga eksplozije.
               </p>
             </div>
@@ -229,7 +243,7 @@
               <p data-i18n="pravilnikPage.shieldsBody">
                 Dozvoljeni su isključivo štitovi koji verno predstavljaju realan model, sa masom
                 od najmanje 25% originala. Nosilac štita ograničen je na sidearm ili SMG repliku
-                kojom se dejstvuje jednom rukom, bez rafalne paljbe.
+                kojom se dejstvuje jednom rukom.
               </p>
             </div>
             <div class="about-card">
@@ -247,14 +261,15 @@
       <section>
         <div class="container">
           <p class="rules-source" data-i18n-html="pravilnikPage.source">
-            Ovaj sažetak prati Srpski airsoft pravilnik (SASP) i pravilnik koji na svojim
+            Ovaj sažetak zasnovan je na Srpskom airsoft pravilniku (SASP) i pravilniku koji na svojim
             događajima u Železniku primenjuje Beoshot airsoft zajednica —
             <a
               href="https://beoshot.rs/src/assets/pdf/AIRSOFT_PRAVILNIK_ZELEZNIK_2024.pdf"
               target="_blank"
               rel="noopener"
               >pun tekst izvornog pravilnika (PDF)</a
-            >. Organizator svakog pojedinačnog događaja zadržava pravo da propiše dodatna ili
+            >. Gde se pravila na ovoj stranici razlikuju od izvornog pravilnika, na treninzima i
+            operacijama kluba ЧОПОР važe pravila sa ove stranice. Organizator svakog pojedinačnog događaja zadržava pravo da propiše dodatna ili
             stroža pravila, koja se objašnjavaju pre početka igre.
           </p>
         </div>

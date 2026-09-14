@@ -174,13 +174,21 @@ h2 {
   color: var(--color-text);
 }
 
+/* Fixed box: the ☾ and ☀ glyphs differ in width, which used to shift the whole nav on toggle. */
 .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 1.7rem;
+  overflow: hidden;
   background: transparent;
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1;
-  padding: 0.3rem 0.6rem;
+  padding: 0;
   cursor: pointer;
   border-radius: 2px;
   transition: border-color 0.15s ease, color 0.15s ease;
@@ -302,6 +310,347 @@ section:nth-of-type(even) {
   color: var(--color-text-muted);
   margin: 0;
   font-size: 0.95rem;
+}
+
+.subheading {
+  font-size: 1.1rem;
+  color: var(--color-khaki);
+  margin: 2.5rem 0 0;
+}
+
+.subheading + .about-grid {
+  margin-top: 1.2rem;
+}
+
+.num-badge {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-btn-solid-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.item-link {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.item-link:hover {
+  color: var(--color-red);
+}
+
+/* ---------- team ---------- */
+
+.member-grid {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.member-patch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 1.2rem;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* stitched edge, like a velcro name patch */
+.member-patch::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed var(--color-khaki-dark);
+  border-radius: 3px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.member-patch img {
+  width: 28px;
+  height: auto;
+}
+
+/* ---------- fields ---------- */
+
+.fields-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.fields-layout.no-map {
+  grid-template-columns: 1fr;
+}
+
+.fields-layout.no-map .fields-map {
+  display: none;
+}
+
+.fields-map {
+  position: relative;
+  z-index: 0; /* contain Leaflet's pane z-indexes below the sticky header */
+  min-height: 420px;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fields-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+}
+
+.field-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.3rem 0.9rem;
+  padding: 0.7rem 1rem;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.field-card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.field-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.fields-map.leaflet-container {
+  background: var(--color-panel-alt);
+  font-family: var(--font-body);
+}
+
+:root:not([data-theme="light"]) .fields-map .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9) saturate(0.45);
+}
+
+.fields-map .map-marker {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.fields-map .leaflet-popup-content-wrapper,
+.fields-map .leaflet-popup-tip {
+  background: var(--color-panel-alt);
+  color: var(--color-text);
+}
+
+.fields-map .leaflet-popup-content h3 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.fields-map .leaflet-popup-content p {
+  margin: 0.1rem 0 0.4rem;
+  color: var(--color-text-muted);
+}
+
+.fields-map .leaflet-popup-content a,
+.fields-map .leaflet-control-attribution a {
+  color: var(--color-khaki);
+}
+
+.fields-map .leaflet-control-attribution {
+  background: var(--color-header-bg);
+  color: var(--color-text-muted);
+}
+
+/* ---------- uniform ---------- */
+
+.uniform-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.uniform-figure {
+  margin: 0;
+  padding: 1.5rem 1rem 1rem;
+  background: radial-gradient(ellipse at 45% 35%, var(--color-panel-alt) 0%, var(--color-panel) 80%);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.uniform-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.uniform-svg .callout-line {
+  fill: none;
+  stroke: var(--color-khaki);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.uniform-svg .callout-dot {
+  fill: var(--color-khaki);
+}
+
+.uniform-svg .callout-badge {
+  fill: var(--color-red);
+}
+
+.uniform-svg .callout-num {
+  fill: var(--color-btn-solid-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.uniform-figure figcaption {
+  margin-top: 0.6rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.uniform-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.uniform-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.2rem;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.uniform-item h3 {
+  font-size: 1.05rem;
+  color: var(--color-khaki);
+  margin: 0 0 0.2rem;
+}
+
+.uniform-item p {
+  margin: 0 0 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.uniform-item .uniform-product {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ---------- replicas ---------- */
+
+.replica-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.replica-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem 1.4rem;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.replica-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1rem;
+  color: var(--color-khaki);
+}
+
+.replica-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.replica-card p {
+  margin: 0 0 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.replica-specs {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: auto 0 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.replica-specs dt {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.replica-specs dd {
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.replica-specs .spec-auto {
+  color: var(--color-red);
+}
+
+.replica-specs .spec-sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
 }
 
 /* ---------- gallery ---------- */
@@ -471,6 +820,7 @@ section:nth-of-type(even) {
 
 table.rules-table {
   width: 100%;
+  min-width: 760px; /* scroll sideways on phones instead of squeezing the notes column */
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.92rem;
@@ -483,7 +833,18 @@ table.rules-table td {
   text-align: left;
 }
 
+table.rules-table td:nth-child(2),
+table.rules-table td:nth-child(3),
+table.rules-table td:nth-child(4) {
+  white-space: nowrap;
+}
+
+table.rules-table th .unit {
+  text-transform: none;
+}
+
 table.rules-table th {
+  white-space: nowrap;
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -548,6 +909,71 @@ table.rules-table th {
   border-radius: 4px;
 }
 
+.ally-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.ally-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1.5rem 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.ally-card:hover {
+  border-color: var(--color-red);
+  transform: translateY(-2px);
+}
+
+/* Most team logos are round social-media avatars, so a circle crop fits them. */
+.ally-logo {
+  width: 112px;
+  height: 112px;
+  margin-bottom: 0.7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+.ally-logo--contain {
+  object-fit: contain;
+  padding: 12px;
+  background: #16180f;
+}
+
+.ally-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+}
+
+.ally-city {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.ally-link {
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  color: var(--color-khaki);
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
@@ -565,6 +991,38 @@ table.rules-table th {
     grid-template-columns: 1fr;
   }
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .member-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fields-layout {
+    grid-template-columns: 1fr;
+  }
+  .fields-map {
+    min-height: 320px;
+  }
+  .uniform-layout {
+    grid-template-columns: 1fr;
+  }
+  .uniform-figure {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .replica-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .field-card {
+    grid-template-columns: auto 1fr;
+  }
+  .field-card .item-link {
+    grid-column: 2;
+  }
+  .replica-grid {
     grid-template-columns: 1fr;
   }
 }

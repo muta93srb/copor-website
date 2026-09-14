@@ -120,4 +120,79 @@
   }
 
   loadGallery();
+
+  // ---- fields map ----
+  // Leaflet is only fetched once the map is about to scroll into view.
+  const mapEl = document.getElementById("fieldsMap");
+  if (mapEl) {
+    const LEAFLET_URL = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/";
+
+    function initMap() {
+      // Fractional zoom lets fitBounds frame the fields tightly instead of snapping far out.
+      const map = L.map(mapEl, { scrollWheelZoom: false, keyboard: false, zoomSnap: 0.25 });
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+      }).addTo(map);
+
+      const points = [];
+      document.querySelectorAll(".field-card[data-lat]").forEach((card, index) => {
+        const point = [Number(card.dataset.lat), Number(card.dataset.lng)];
+        points.push(point);
+        const icon = L.divIcon({
+          className: "",
+          html: `<span class="num-badge map-marker">${index + 1}</span>`,
+          iconSize: [28, 28],
+          iconAnchor: [14, 14],
+          popupAnchor: [0, -14],
+        });
+        // Built from the card when opened, so the popup follows the active language.
+        const popup = () => {
+          const content = document.createElement("div");
+          ["h3", "p", "a"].forEach((tag) => content.appendChild(card.querySelector(tag).cloneNode(true)));
+          return content;
+        };
+        L.marker(point, { icon, keyboard: false }).bindPopup(popup).addTo(map);
+      });
+      map.fitBounds(points, { padding: [30, 30] });
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(() => map.invalidateSize()).observe(mapEl);
+      }
+    }
+
+    function loadLeaflet() {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = LEAFLET_URL + "leaflet.min.css";
+      css.integrity = "sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==";
+      css.crossOrigin = "anonymous";
+      document.head.appendChild(css);
+
+      const script = document.createElement("script");
+      script.src = LEAFLET_URL + "leaflet.min.js";
+      script.integrity = "sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==";
+      script.crossOrigin = "anonymous";
+      script.onload = initMap;
+      // The field list already has every location, so just drop the map if the CDN fails.
+      script.onerror = () => mapEl.parentElement.classList.add("no-map");
+      document.head.appendChild(script);
+    }
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer.disconnect();
+            loadLeaflet();
+          }
+        },
+        { rootMargin: "400px" }
+      );
+      observer.observe(mapEl);
+    } else {
+      loadLeaflet();
+    }
+  }
 })();
