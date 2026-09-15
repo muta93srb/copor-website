@@ -54,7 +54,8 @@
     const item = images[currentIndex];
     lightboxImage.src = `gallery/images/${item.file}`;
     lightboxImage.alt = item.caption || item.file;
-    lightboxCaption.textContent = item.caption || "";
+    // A counter instead of the filename-based caption, so no Latin text shows in Cyrillic mode.
+    lightboxCaption.textContent = `${currentIndex + 1} / ${images.length}`;
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
   }
@@ -130,6 +131,8 @@
     function initMap() {
       // Fractional zoom lets fitBounds frame the fields tightly instead of snapping far out.
       const map = L.map(mapEl, { scrollWheelZoom: false, keyboard: false, zoomSnap: 0.25 });
+      // Drop the optional "Leaflet" credit; the required OpenStreetMap attribution stays.
+      map.attributionControl.setPrefix(false);
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
         attribution:
