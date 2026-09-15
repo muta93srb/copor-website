@@ -268,30 +268,49 @@
           </p>
 
           <h3 class="subheading" data-i18n="team.membersTitle">Чланови</h3>
+          <!-- Sorted by name. A member without a callsign keeps an empty .member-callsign so the patches line up. -->
           <ul class="member-grid">
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberAlexa">Алекса</span>
+              <span class="member-id">
+                <span class="member-callsign" data-i18n="team.callsignStriker">Страјкер</span>
+                <span class="member-name" data-i18n="team.memberAlexa">Алекса</span>
+              </span>
             </li>
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberDojca">Дојча</span>
+              <span class="member-id">
+                <span class="member-callsign" data-i18n="team.callsignVarjag">Варјаг</span>
+                <span class="member-name" data-i18n="team.memberDojca">Дојча</span>
+              </span>
             </li>
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberJovan">Јован</span>
+              <span class="member-id">
+                <span class="member-callsign" data-i18n="team.callsignMuta">Мута</span>
+                <span class="member-name" data-i18n="team.memberDjordje">Ђорђе</span>
+              </span>
             </li>
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberKocka">Коцка</span>
+              <span class="member-id">
+                <span class="member-callsign"></span>
+                <span class="member-name" data-i18n="team.memberJovan">Јован</span>
+              </span>
             </li>
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberMihajlo">Михајло</span>
+              <span class="member-id">
+                <span class="member-callsign"></span>
+                <span class="member-name" data-i18n="team.memberKocka">Коцка</span>
+              </span>
             </li>
             <li class="member-patch">
               <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
-              <span data-i18n="team.memberMuta">Мута</span>
+              <span class="member-id">
+                <span class="member-callsign"></span>
+                <span class="member-name" data-i18n="team.memberMihajlo">Михајло</span>
+              </span>
             </li>
           </ul>
 
@@ -309,6 +328,138 @@
               <h3 data-i18n="team.role3Title">Извиђање</h3>
               <p data-i18n="team.role3Body">Праћење терена и правовремено јављање позиција противника.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="loadout">
+        <div class="container">
+          <span class="eyebrow" data-i18n="loadout.eyebrow">Лична опрема</span>
+          <h2 data-i18n="loadout.title">Лоудаут</h2>
+          <p data-i18n="loadout.intro">
+            Реплике и опрема са којима сваки члан излази на терен. Униформа је заједничка за цео
+            тим, а лоудаут зависи од улоге и личног избора. Кликни на ставку да видиш њену слику.
+          </p>
+
+          <!--
+            Each item opens its data-img in the lightbox; the placeholder-*.svg images stand in until
+            there is a photo of the actual item. An empty .loadout-value renders as "—" — to fill one,
+            give it a data-i18n key and add the text to all three i18n files.
+          -->
+          <div class="loadout-grid">
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign" data-i18n="team.callsignStriker">Страјкер</span>
+                  <span class="member-name" data-i18n="team.memberAlexa">Алекса</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
+
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign" data-i18n="team.callsignVarjag">Варјаг</span>
+                  <span class="member-name" data-i18n="team.memberDojca">Дојча</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
+
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign" data-i18n="team.callsignMuta">Мута</span>
+                  <span class="member-name" data-i18n="team.memberDjordje">Ђорђе</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
+
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign"></span>
+                  <span class="member-name" data-i18n="team.memberJovan">Јован</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
+
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign"></span>
+                  <span class="member-name" data-i18n="team.memberKocka">Коцка</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
+
+            <article class="loadout-card">
+              <h3 class="member-patch">
+                <img src="assets/logo/copor-logo-web.webp" alt="" width="28" height="32" />
+                <span class="member-id">
+                  <span class="member-callsign"></span>
+                  <span class="member-name" data-i18n="team.memberMihajlo">Михајло</span>
+                </span>
+              </h3>
+              <ul class="loadout-list">
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-primary.svg"><span class="loadout-slot" data-i18n="loadout.primary">Примарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-secondary.svg"><span class="loadout-slot" data-i18n="loadout.secondary">Секундарна реплика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-optic.svg"><span class="loadout-slot" data-i18n="loadout.optic">Оптика</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-vest.svg"><span class="loadout-slot" data-i18n="loadout.vest">Тактички прслук</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-helmet.svg"><span class="loadout-slot" data-i18n="loadout.helmet">Шлем</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-eyewear.svg"><span class="loadout-slot" data-i18n="loadout.eyewear">Заштита очију</span><span class="loadout-value"></span></button></li>
+                <li><button type="button" class="loadout-item" data-img="assets/loadout/placeholder-radio.svg"><span class="loadout-slot" data-i18n="loadout.radio">Радио</span><span class="loadout-value"></span></button></li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>

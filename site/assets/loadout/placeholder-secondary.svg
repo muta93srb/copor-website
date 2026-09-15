@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+      <rect width="480" height="180" fill="#fff" />
+      <g transform="translate(151.899 19.717) scale(0.99)" fill="#000">
+        <path d="M96 46H118Q124 46 124 52V64Q124 70 118 70H96Q90 70 90 64V52Q90 46 96 46Z" />
+        <path d="M75.5 96a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+        <path d="M69.5 113a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+        <path d="M63.5 130a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0Z" />
+        <path d="M143 38H149Q150 38 150 39V45Q150 46 149 46H143Q142 46 142 45V39Q142 38 143 38Z" />
+        <path d="M159 38H165Q166 38 166 39V45Q166 46 165 46H159Q158 46 158 45V39Q158 38 159 38Z" />
+        <path d="M73 5H111Q114 5 114 8V12Q114 15 111 15H73Q70 15 70 12V8Q70 5 73 5Z" />
+        <path fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" d="M14 7V25M22 7V25M30 7V25M38 7V25M46 7V25" />
+        <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M88 31H182" />
+        <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M-6 140H62" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(24 234) scale(2.4)">
+    <g fill="#a89f86">
+      <g mask="url(#cut)">
+        <g transform="translate(151.899 19.717) scale(0.99)">
+          <path d="M4 6Q4 0 10 0H178Q186 0 186 8V22L180 30H4Z" />
+          <path d="M10 0L12 -8H26L28 0Z" />
+          <path d="M170 0L171 -7H177L178 0Z" />
+          <path d="M12 30H182V44H132L134 50L132 70Q131 76 124 76H92Q86 76 84 80L64 138Q62 144 54 144H2Q-8 144 -6 134L16 46L2 40Q-2 36 4 32Z" />
+          <path d="M-8 139H62L60 150H-6Z" />
+        </g>
+      </g>
+      <g transform="translate(151.899 19.717) scale(0.99)">
+        <path d="M104 46Q110 55 106 65H101Q104 55 98 46Z" />
+      </g>
+    </g>
+  </g>
+</svg>

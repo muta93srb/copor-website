@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="180">
+      <rect width="480" height="180" fill="#fff" />
+      <g transform="translate(11.036 59.15) scale(0.482)" fill="#000">
+        <path d="M40 -14H160Q168 -14 162 -6L150 8Q146 12 140 14L60 58Q44 66 40 52Z" />
+        <path d="M344 50H382Q388 50 388 56V72Q388 78 382 78H344Q338 78 338 72V56Q338 50 344 50Z" />
+        <path d="M536 -7H552Q558 -7 558 -1V0Q558 6 552 6H536Q530 6 530 0V-1Q530 -7 536 -7Z" />
+        <path d="M578 -7H594Q600 -7 600 -1V0Q600 6 594 6H578Q572 6 572 0V-1Q572 -7 578 -7Z" />
+        <path d="M620 -7H636Q642 -7 642 -1V0Q642 6 636 6H620Q614 6 614 0V-1Q614 -7 620 -7Z" />
+        <path d="M662 -7H678Q684 -7 684 -1V0Q684 6 678 6H662Q656 6 656 0V-1Q656 -7 662 -7Z" />
+        <path d="M704 -7H720Q726 -7 726 -1V0Q726 6 720 6H704Q698 6 698 0V-1Q698 -7 704 -7Z" />
+        <path d="M746 -7H762Q768 -7 768 -1V0Q768 6 762 6H746Q740 6 740 0V-1Q740 -7 746 -7Z" />
+        <path d="M788 -7H804Q810 -7 810 -1V0Q810 6 804 6H788Q782 6 782 0V-1Q782 -7 788 -7Z" />
+        <path d="M334 -88H418Q422 -88 422 -84V-66Q422 -62 418 -62H334Q330 -62 330 -66V-84Q330 -88 334 -88Z" />
+        <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M18 -28V98" />
+        <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M398 67H476" />
+        <path fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" d="M502 -30V24" />
+        <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M272 -25H830" />
+        <path fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" d="M262 22H400" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(144 279) scale(1.9)">
+    <g fill="#a89f86">
+      <g mask="url(#cut)">
+        <g transform="translate(11.036 59.15) scale(0.482)">
+          <path d="M4 -20Q4 -30 14 -30H182Q190 -30 192 -24L198 -18H272V14H206L196 24L120 44L30 96Q22 100 14 100H12Q4 100 4 92Z" />
+          <path d="M249 -28H267Q270 -28 270 -25V-19Q270 -16 267 -16H249Q246 -16 246 -19V-25Q246 -28 249 -28Z" />
+          <path d="M262 -24L270 -32H502V22H262Z" />
+          <path d="M262 22H484V34L478 66H396L394 86H336Q330 86 330 80L304 146Q300 154 290 154H268Q256 154 258 142L284 48Q286 40 276 40H262Z" />
+          <path d="M402 66H472Q478 140 496 214L438 226Q418 146 402 66Z" />
+          <path d="M507 -32H825Q832 -32 832 -25V19Q832 26 825 26H507Q500 26 500 19V-25Q500 -32 507 -32Z" />
+          <path d="M832 -8H892Q894 -8 894 -6V6Q894 8 892 8H832Q830 8 830 6V-6Q830 -8 832 -8Z" />
+          <path d="M892 -12H944Q948 -12 948 -8V8Q948 12 944 12H892Q888 12 888 8V-8Q888 -12 892 -12Z" />
+          <path d="M468 -32L474 -44H492L496 -32Z" />
+          <path d="M800 -32L806 -44H822L826 -32Z" />
+          <path d="M322 -60H432Q436 -60 436 -56V-36Q436 -32 432 -32H322Q318 -32 318 -36V-56Q318 -60 322 -60Z" />
+          <path d="M316 -90Q316 -100 326 -100H426Q436 -100 436 -90V-58H316Z" />
+        </g>
+      </g>
+      <g transform="translate(11.036 59.15) scale(0.482)">
+        <path d="M356 50Q362 62 357 74H352Q356 62 350 50Z" />
+      </g>
+    </g>
+  </g>
+</svg>

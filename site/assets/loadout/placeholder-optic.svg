@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="2000" height="2000">
+      <rect x="-1000" y="-1000" width="2000" height="2000" fill="#fff" />
+      <g fill="none" stroke="#000" stroke-linecap="round">
+        <path stroke-width="6" d="M-370 -46V46M-354 -46V46M-338 -46V46" />
+        <path stroke-width="5" d="M-300 -54V54M366 -62V62" />
+        <path stroke-width="5" d="M-30 -114V-78M-15 -114V-78M0 -114V-78M15 -114V-78M30 -114V-78" />
+        <path stroke-width="5" d="M-46 -64H46" />
+        <circle stroke-width="6" cx="0" cy="-2" r="28" />
+      </g>
+      <g fill="#000">
+        <circle cx="-127" cy="-22" r="5" />
+        <circle cx="-127" cy="22" r="5" />
+        <circle cx="119" cy="-22" r="5" />
+        <circle cx="119" cy="22" r="5" />
+        <circle cx="-127" cy="101" r="7" />
+        <circle cx="119" cy="101" r="7" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(600 447)">
+    <g fill="#a89f86" mask="url(#cut)">
+      <path d="M-392 -52Q-392 -60 -384 -60H-300C-262 -60 -236 -34 -196 -32H-150V32H-196C-236 34 -262 60 -300 60H-384Q-392 60 -392 52Z" />
+      <path d="M-200 -32H200V32H-200Z" />
+      <path d="M150 -32H196C240 -34 262 -70 306 -72H384Q392 -72 392 -64V64Q392 72 384 72H306C262 70 240 34 196 32H150Z" />
+      <path d="M-350 -58H-326V-86Q-326 -92 -332 -92H-344Q-350 -92 -350 -86Z" />
+      <path d="M-64 -50H64Q78 -50 78 -36V32Q78 46 64 46H-64Q-78 46 -78 32V-36Q-78 -50 -64 -50Z" />
+      <path d="M-36 -68H36V-48H-36Z" />
+      <path d="M-38 -124H38Q46 -124 46 -116V-64H-46V-116Q-46 -124 -38 -124Z" />
+      <path d="M-150 -40H-104V40H-150ZM-146 40H-108L-100 86H-154Z" />
+      <path d="M96 -40H142V40H96ZM100 40H138L146 86H92Z" />
+      <path d="M-210 84H206Q214 84 214 92V110Q214 118 206 118H-210Q-218 118 -218 110V92Q-218 84 -210 84Z" />
+    </g>
+  </g>
+</svg>

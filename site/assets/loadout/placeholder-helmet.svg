@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="2000" height="2000">
+      <rect x="-1000" y="-1000" width="2000" height="2000" fill="#fff" />
+      <g fill="none" stroke="#000" stroke-linecap="round">
+        <path stroke-width="6" d="M-300 66C-200 50 -90 42 10 40V-4C-90 -2 -200 6 -292 22" />
+        <path stroke-width="12" stroke-dasharray="36 28" d="M-270 43C-190 28 -90 20 -10 18" />
+        <path stroke-width="6" d="M-196 -86C-160 -180 -60 -222 40 -222C130 -222 206 -176 240 -104" />
+      </g>
+      <g transform="translate(214 -128) rotate(42)">
+        <rect x="-54" y="-30" width="108" height="60" rx="12" fill="none" stroke="#000" stroke-width="6" />
+        <rect x="-24" y="-9" width="48" height="18" rx="9" fill="#000" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(600 468)">
+    <path fill="#a89f86" mask="url(#cut)" d="M-318 118C-330 -120 -170 -254 20 -254C206 -254 326 -128 326 36L326 70Q326 92 304 92H236C204 92 182 44 128 34C66 24 24 64 8 118Z" />
+    <g fill="#a89f86" stroke="#a89f86" opacity="0.7">
+      <path fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" d="M40 96L78 196M-150 118L78 196" />
+      <path stroke="none" d="M50 186H110Q122 186 122 198V206Q122 218 110 218H50Q38 218 38 206V198Q38 186 50 186Z" />
+    </g>
+  </g>
+</svg>

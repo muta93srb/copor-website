@@ -10,6 +10,7 @@ Fully static club website, hosted for free on GitHub Pages.
   - `gallery/images/` — **drop photos here.** `gallery/manifest.json` is auto-generated on every deploy (see below) — you never edit it by hand.
   - `assets/logo/` — web-sized logo files only (favicon, header logo, social preview).
   - `assets/teams/` — logos of the allied teams shown on `bratski-timovi.html`.
+  - `assets/loadout/` — images opened by clicking a loadout item on the home page. Each item's `data-img` in `index.html` points at its image; the `placeholder-*.svg` files stand in until real photos are added.
 - `print/` — the print-ready logo files (full color, single-color, vector, large PNG) for t-shirts and plastic/engraving — hand this folder to a print shop. **Not part of the deployed site.** See [print/README.md](print/README.md).
 - `assets/logo/` (repo root) — the full logo asset pipeline output, including the `print/` files plus web-only versions. See [assets/logo/README.md](assets/logo/README.md).
 - `images/` — original source mockups the logo was extracted from.

@@ -35,10 +35,8 @@
     });
   }
 
-  // ---- gallery ----
-  const grid = document.getElementById("galleryGrid");
-  const emptyMsg = document.getElementById("galleryEmpty");
-  const errorMsg = document.getElementById("galleryError");
+  // ---- lightbox ----
+  // Shared by the gallery and the loadout items.
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const lightboxCaption = document.getElementById("lightboxCaption");
@@ -46,34 +44,39 @@
   const lightboxPrev = document.getElementById("lightboxPrev");
   const lightboxNext = document.getElementById("lightboxNext");
 
-  let images = [];
+  // Each slide is { src, alt, label }; label is optional, already-translated caption text.
+  let slides = [];
   let currentIndex = 0;
+  let returnFocus = null;
 
-  function openLightbox(index) {
-    currentIndex = index;
-    const item = images[currentIndex];
-    lightboxImage.src = `gallery/images/${item.file}`;
-    lightboxImage.alt = item.caption || item.file;
-    // A counter instead of the filename-based caption, so no Latin text shows in Cyrillic mode.
-    lightboxCaption.textContent = `${currentIndex + 1} / ${images.length}`;
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    const slide = slides[currentIndex];
+    lightboxImage.src = slide.src;
+    lightboxImage.alt = slide.alt;
+    const counter = `${currentIndex + 1} / ${slides.length}`;
+    lightboxCaption.textContent = slide.label ? `${slide.label} · ${counter}` : counter;
+  }
+
+  function openLightbox(items, index) {
+    slides = items;
+    returnFocus = document.activeElement;
+    showSlide(index);
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
+    lightboxClose.focus();
   }
 
   function closeLightbox() {
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
     lightboxImage.src = "";
-  }
-
-  function showRelative(delta) {
-    currentIndex = (currentIndex + delta + images.length) % images.length;
-    openLightbox(currentIndex);
+    if (returnFocus) returnFocus.focus();
   }
 
   if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
-  if (lightboxPrev) lightboxPrev.addEventListener("click", () => showRelative(-1));
-  if (lightboxNext) lightboxNext.addEventListener("click", () => showRelative(1));
+  if (lightboxPrev) lightboxPrev.addEventListener("click", () => showSlide(currentIndex - 1));
+  if (lightboxNext) lightboxNext.addEventListener("click", () => showSlide(currentIndex + 1));
   if (lightbox) {
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLightbox();
@@ -82,13 +85,22 @@
   document.addEventListener("keydown", (e) => {
     if (!lightbox || !lightbox.classList.contains("open")) return;
     if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowLeft") showRelative(-1);
-    if (e.key === "ArrowRight") showRelative(1);
+    if (e.key === "ArrowLeft") showSlide(currentIndex - 1);
+    if (e.key === "ArrowRight") showSlide(currentIndex + 1);
   });
+
+  // ---- gallery ----
+  const grid = document.getElementById("galleryGrid");
+  const emptyMsg = document.getElementById("galleryEmpty");
+  const errorMsg = document.getElementById("galleryError");
+
+  let images = [];
 
   function renderGallery() {
     if (!grid) return;
     grid.innerHTML = "";
+    // No label: the manifest captions come from filenames, and a counter alone keeps Latin text out of Cyrillic mode.
+    const gallerySlides = images.map((item) => ({ src: `gallery/images/${item.file}`, alt: item.caption || item.file }));
     images.forEach((item, index) => {
       const btn = document.createElement("button");
       btn.type = "button";
@@ -98,7 +110,7 @@
       img.alt = item.caption || item.file;
       img.loading = "lazy";
       btn.appendChild(img);
-      btn.addEventListener("click", () => openLightbox(index));
+      btn.addEventListener("click", () => openLightbox(gallerySlides, index));
       grid.appendChild(btn);
     });
   }
@@ -121,6 +133,25 @@
   }
 
   loadGallery();
+
+  // ---- loadout ----
+  // Arrows in the lightbox step through the same member's items.
+  document.querySelectorAll(".loadout-card").forEach((card) => {
+    const items = [...card.querySelectorAll(".loadout-item[data-img]")];
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        // Captions are read from the rendered text on each click, so they follow the active language.
+        const member = card.querySelector(".member-callsign").textContent || card.querySelector(".member-name").textContent;
+        const loadoutSlides = items.map((el) => {
+          const slot = el.querySelector(".loadout-slot").textContent;
+          const value = el.querySelector(".loadout-value").textContent;
+          const label = `${member} — ${value ? `${slot}: ${value}` : slot}`;
+          return { src: el.dataset.img, alt: label, label };
+        });
+        openLightbox(loadoutSlides, index);
+      });
+    });
+  });
 
   // ---- fields map ----
   // Leaflet is only fetched once the map is about to scroll into view.

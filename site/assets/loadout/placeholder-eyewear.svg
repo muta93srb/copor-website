@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="2000" height="2000">
+      <rect x="-1000" y="-1000" width="2000" height="2000" fill="#fff" />
+      <path fill="#000" d="M-282 -112H282Q312 -112 312 -84V42Q312 92 262 92H104Q72 92 56 60Q34 20 0 20Q-34 20 -56 60Q-72 92 -104 92H-262Q-312 92 -312 42V-84Q-312 -112 -282 -112Z" />
+      <g fill="#000">
+        <rect x="-210" y="-131" width="44" height="9" rx="4.5" />
+        <rect x="-110" y="-131" width="44" height="9" rx="4.5" />
+        <rect x="66" y="-131" width="44" height="9" rx="4.5" />
+        <rect x="166" y="-131" width="44" height="9" rx="4.5" />
+      </g>
+      <path fill="none" stroke="#000" stroke-width="5" d="M-386 -70V30M-366 -70V30M366 -70V30M386 -70V30" />
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(600 460)">
+    <g fill="#a89f86" mask="url(#cut)">
+      <path d="M-300 -140H300Q340 -140 340 -100V50Q340 120 270 120H96Q52 120 30 76Q16 48 0 48Q-16 48 -30 76Q-52 120 -96 120H-270Q-340 120 -340 50V-100Q-340 -140 -300 -140Z" />
+      <path d="M-340 -70H-420Q-440 -70 -440 -50V10Q-440 30 -420 30H-340Z" />
+      <path d="M340 -70H420Q440 -70 440 -50V10Q440 30 420 30H340Z" />
+    </g>
+    <path fill="#a89f86" fill-opacity="0.22" d="M-282 -112H282Q312 -112 312 -84V42Q312 92 262 92H104Q72 92 56 60Q34 20 0 20Q-34 20 -56 60Q-72 92 -104 92H-262Q-312 92 -312 42V-84Q-312 -112 -282 -112Z" />
+    <g fill="none" stroke="#a89f86" stroke-linecap="round" stroke-opacity="0.55">
+      <path stroke-width="12" d="M-236 -76L-176 30M150 -76L204 18" />
+      <path stroke-width="6" d="M-196 -80L-150 0" />
+    </g>
+  </g>
+</svg>

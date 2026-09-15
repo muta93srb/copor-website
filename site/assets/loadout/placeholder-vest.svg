@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <!-- Placeholder loadout image: replace with a photo of the item. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#a89f86" stroke-opacity="0.06" stroke-width="2" />
+    </pattern>
+    <mask id="cut" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="2000" height="2000">
+      <rect x="-1000" y="-1000" width="2000" height="2000" fill="#fff" />
+      <g fill="none" stroke="#000" stroke-width="7">
+        <path stroke-dasharray="30 10" d="M-226 -84H-128M128 -84H226M-226 -52H-128M128 -52H226M-226 -20H-128M128 -20H226" />
+        <path d="M-200 -262H-96M96 -262H200" />
+      </g>
+    </mask>
+    <mask id="cutPouches" maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="2000" height="2000">
+      <rect x="-1000" y="-1000" width="2000" height="2000" fill="#fff" />
+      <g fill="none" stroke="#000">
+        <path stroke-width="5" d="M-186 62H-66M-58 62H58M66 62H186" />
+        <path stroke-width="7" d="M-186 106H-66M-58 106H58M66 106H186" />
+        <path stroke-width="6" d="M-88 -106H88V-34H-88Z" />
+      </g>
+    </mask>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)" />
+  <rect width="1200" height="900" fill="url(#grid)" />
+  <path d="M60 160V60H160M1040 60H1140V160M1140 740V840H1040M160 840H60V740" fill="none" stroke="#8d8579" stroke-opacity="0.6" stroke-width="6" />
+  <g transform="translate(600 479)">
+    <g fill="#a89f86" opacity="0.55" mask="url(#cut)">
+      <path d="M-150 -210Q-120 -150 0 -150Q120 -150 150 -210L236 -126Q246 -116 246 -102V262Q246 290 218 290H-218Q-246 290 -246 262V-102Q-246 -116 -236 -126Z" />
+      <path d="M-214 -150L-178 -330Q-174 -348 -156 -348H-104Q-86 -348 -88 -330L-106 -170Z" />
+      <path d="M214 -150L178 -330Q174 -348 156 -348H104Q86 -348 88 -330L106 -170Z" />
+      <path d="M-246 40H-306Q-322 40 -322 56V238Q-322 254 -306 254H-246Z" />
+      <path d="M246 40H306Q322 40 322 56V238Q322 254 306 254H246Z" />
+    </g>
+    <g fill="#a89f86" mask="url(#cutPouches)">
+      <path d="M-150 24H-102V70H-150ZM-24 24H24V70H-24ZM102 24H150V70H102Z" />
+      <path d="M-176 60H-76Q-66 60 -66 70V252Q-66 262 -76 262H-176Q-186 262 -186 252V70Q-186 60 -176 60Z" />
+      <path d="M-48 60H48Q58 60 58 70V252Q58 262 48 262H-48Q-58 262 -58 252V70Q-58 60 -48 60Z" />
+      <path d="M76 60H176Q186 60 186 70V252Q186 262 176 262H76Q66 262 66 252V70Q66 60 76 60Z" />
+      <path d="M-104 -128H104Q116 -128 116 -116V-6Q116 6 104 6H-104Q-116 6 -116 -6V-116Q-116 -128 -104 -128Z" />
+    </g>
+  </g>
+</svg>
