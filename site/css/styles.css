@@ -357,7 +357,21 @@ section:nth-of-type(even) {
   margin: 1.2rem 0 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start; /* an opened member grows without stretching the rest of its row */
   gap: 1rem;
+}
+
+/* member card: the name patch is the <summary> that opens the loadout below it */
+.member {
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+
+/* .is-closing is set by main.js while the card animates shut, so the open styling drops right away */
+.member[open]:not(.is-closing) {
+  border-color: var(--color-khaki-dark);
 }
 
 .member-patch {
@@ -366,11 +380,45 @@ section:nth-of-type(even) {
   align-items: center;
   gap: 0.9rem;
   padding: 0.85rem 1.2rem;
-  background: var(--color-panel-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: 5px;
   font-family: var(--font-display);
   text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.member-patch::-webkit-details-marker {
+  display: none;
+}
+
+.member[open]:not(.is-closing) .member-patch {
+  border-radius: 5px 5px 0 0;
+  background: var(--color-panel);
+}
+
+/* chevron at the far right: down when closed, up when open */
+.member-patch::before {
+  content: "";
+  order: 1;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.3rem 0.2rem auto;
+  border-right: 2px solid var(--color-khaki);
+  border-bottom: 2px solid var(--color-khaki);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease, border-color 0.15s ease;
+}
+
+.member[open]:not(.is-closing) .member-patch::before {
+  margin-bottom: -0.2rem;
+  transform: rotate(-135deg);
+}
+
+.member-patch:hover::before,
+.member-patch:focus-visible::before {
+  border-color: var(--color-red);
 }
 
 /* stitched edge, like a velcro name patch */
@@ -422,29 +470,30 @@ section:nth-of-type(even) {
 
 /* ---------- loadout ---------- */
 
-.loadout-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.loadout-card {
-  padding: 0.6rem 0.6rem 0.8rem;
-  background: var(--color-panel-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-}
-
-.loadout-card .member-patch {
-  margin: 0 0 0.3rem;
-  background: var(--color-panel);
-}
-
 .loadout-list {
   list-style: none;
   margin: 0;
-  padding: 0 0.6rem;
+  padding: 0.15rem 1.2rem 0.45rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* main.js animates the card height; the list fades in and out along with it */
+@media (prefers-reduced-motion: no-preference) {
+  .member[open] .loadout-list {
+    animation: loadout-open 0.3s ease-out;
+    transition: opacity 0.2s ease;
+  }
+
+  .member.is-closing .loadout-list {
+    opacity: 0;
+  }
+}
+
+@keyframes loadout-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
 }
 
 .loadout-list li + li {
@@ -638,6 +687,119 @@ section:nth-of-type(even) {
   height: auto;
 }
 
+.uniform-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.uniform-switch button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 9.5rem;
+  padding: 0.5rem 1rem 0.55rem;
+  background: var(--color-panel-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.2s ease;
+}
+
+.uniform-switch button:hover {
+  border-color: var(--color-khaki-dark);
+  color: var(--color-text);
+}
+
+.uniform-switch button[aria-selected="true"] {
+  border-color: var(--color-red);
+  box-shadow: inset 0 -3px 0 var(--color-red);
+  color: var(--color-text);
+}
+
+.uniform-switch-name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+
+.uniform-switch-sub {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--color-text-muted);
+}
+
+/* Both drawings share one grid cell, and so do both product lists: switching cross-fades
+   in place without changing the section height. */
+.uniform-stage,
+.uniform-panels {
+  display: grid;
+}
+
+.uniform-stage .uniform-svg,
+.uniform-panel {
+  grid-area: 1 / 1;
+}
+
+.uniform-svg:not(.is-active) {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.uniform-panel:not(.is-active) {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.uniform-panel.is-before {
+  transform: translateX(-1.5rem);
+}
+
+.uniform-panel.is-after {
+  transform: translateX(1.5rem);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .uniform-svg {
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .uniform-panel {
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  }
+
+  .uniform-item {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .uniform-panel:not(.is-active) .uniform-item {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+
+  .uniform-panel.is-active .uniform-item:nth-child(2) {
+    transition-delay: 0.07s;
+  }
+
+  .uniform-panel.is-active .uniform-item:nth-child(3) {
+    transition-delay: 0.14s;
+  }
+}
+
+.uniform-svg .patch-text {
+  fill: #d9d0b6;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 6.4px;
+  letter-spacing: 0.03em;
+  text-anchor: middle;
+}
+
 .uniform-svg .callout-line {
   fill: none;
   stroke: var(--color-khaki);
@@ -767,6 +929,12 @@ section:nth-of-type(even) {
 
 .replica-specs .spec-auto {
   color: var(--color-red);
+}
+
+.replica-credit {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
 }
 
 .replica-specs .spec-sub {
@@ -1134,8 +1302,7 @@ table.rules-table th {
     max-width: 400px;
     margin: 0 auto;
   }
-  .replica-grid,
-  .loadout-grid {
+  .replica-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1148,8 +1315,7 @@ table.rules-table th {
     grid-column: 2;
   }
   .member-grid,
-  .replica-grid,
-  .loadout-grid {
+  .replica-grid {
     grid-template-columns: 1fr;
   }
 }

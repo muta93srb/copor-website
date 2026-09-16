@@ -134,9 +134,35 @@
 
   loadGallery();
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   // ---- loadout ----
-  // Arrows in the lightbox step through the same member's items.
-  document.querySelectorAll(".loadout-card").forEach((card) => {
+  // Each member card is a <details> that opens to its loadout; arrows in the lightbox step through
+  // that member's items.
+  document.querySelectorAll(".member").forEach((card) => {
+    // <details> snaps open and shut, so the height is animated here. A click mid-animation reverses it.
+    const summary = card.querySelector("summary");
+    let animation = null;
+    summary.addEventListener("click", (e) => {
+      if (reduceMotion.matches) return;
+      e.preventDefault();
+      const opening = !card.open || card.classList.contains("is-closing");
+      const from = card.offsetHeight;
+      if (animation) animation.cancel();
+      card.open = true;
+      const border = card.offsetHeight - card.clientHeight;
+      const to = (opening ? card.scrollHeight : summary.offsetHeight) + border;
+      card.classList.toggle("is-closing", !opening);
+      card.style.overflow = "hidden";
+      animation = card.animate({ height: [`${from}px`, `${to}px`] }, { duration: 300, easing: "ease-out" });
+      animation.onfinish = () => {
+        card.open = opening;
+        card.classList.remove("is-closing");
+        card.style.overflow = "";
+        animation = null;
+      };
+    });
+
     const items = [...card.querySelectorAll(".loadout-item[data-img]")];
     items.forEach((item, index) => {
       item.addEventListener("click", () => {
@@ -150,6 +176,35 @@
         });
         openLightbox(loadoutSlides, index);
       });
+    });
+  });
+
+  // ---- uniform switch ----
+  // Tabs pick which uniform is shown; the stacked drawings and lists cross-fade through CSS classes.
+  const uniformTabs = [...document.querySelectorAll(".uniform-switch [role='tab']")];
+
+  function selectUniform(index) {
+    uniformTabs.forEach((tab, i) => {
+      const active = i === index;
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute("aria-controls"));
+      panel.classList.toggle("is-active", active);
+      // Panels wait on the side they will slide in from.
+      panel.classList.toggle("is-before", i < index);
+      panel.classList.toggle("is-after", i > index);
+      document.querySelector(`.uniform-svg[data-uniform="${tab.dataset.uniform}"]`).classList.toggle("is-active", active);
+    });
+  }
+
+  uniformTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => selectUniform(index));
+    tab.addEventListener("keydown", (e) => {
+      const step = { ArrowLeft: -1, ArrowRight: 1 }[e.key];
+      if (!step) return;
+      const next = (index + step + uniformTabs.length) % uniformTabs.length;
+      selectUniform(next);
+      uniformTabs[next].focus();
     });
   });
 
