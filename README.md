@@ -9,7 +9,8 @@ Fully static club website, hosted for free on GitHub Pages.
   - `i18n/` — translation dictionaries (`sr-Cyrl.json`, `sr-Latn.json`, `en.json`); language switcher in the header.
   - `gallery/images/` — **drop photos here.** `gallery/manifest.json` is auto-generated on every deploy (see below) — you never edit it by hand.
   - `assets/logo/` — web-sized logo files only (favicon, header logo, social preview).
-  - `assets/teams/` — logos of the allied teams shown on `bratski-timovi.html`.
+  - `assets/teams/` — logos of the allied teams on `bratski-timovi.html` and of the ASZ JUG founding teams on `asz-jug.html`. `placeholder-team.svg` stands in for a team whose logo we do not have yet.
+  - `assets/asz-jug/crest.svg` — the ASZ JUG crest, vectorised from the community's own artwork. The file itself is flat; the glow around it on the page is CSS (`.asz-crest`).
   - `assets/loadout/` — images opened by clicking a loadout item on the home page. Each item's `data-img` in `index.html` points at its image; the `placeholder-*.svg` files stand in until real photos are added.
   - `assets/uniform/` — `dpm-camo.svg`, the DPM camo of uniform 2's pants, traced from the Horus P-2 GEN II product photo.
 - `print/` — the print-ready logo files (full color, single-color, vector, large PNG) for t-shirts and plastic/engraving — hand this folder to a print shop. **Not part of the deployed site.** See [print/README.md](print/README.md).

@@ -1266,6 +1266,68 @@ table.rules-table th {
   color: var(--color-khaki);
 }
 
+/* Founder we have no profile link for yet - a card, but nothing to click. */
+.ally-card--pending {
+  cursor: default;
+}
+
+.ally-card--pending:hover {
+  border-color: var(--color-border);
+  transform: none;
+}
+
+.ally-link--pending {
+  color: var(--color-text-muted);
+}
+
+.ally-card--own {
+  border-color: var(--color-khaki-dark);
+}
+
+/* ---------- ASZ JUG ---------- */
+
+.asz-hero {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.asz-crest {
+  width: 100%;
+  height: auto;
+  /* the crest ships flat; the glow around it is the site's, not part of the file */
+  filter: drop-shadow(0 0 14px rgba(232, 228, 218, 0.28));
+}
+
+/* On the light theme the crest's white border would dissolve into the page,
+   so it gets a cast shadow instead of a glow. */
+:root[data-theme="light"] .asz-crest {
+  filter: drop-shadow(0 3px 12px rgba(32, 31, 25, 0.4));
+}
+
+.asz-hero-text h2 {
+  margin-top: 0;
+}
+
+.page-note {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .asz-hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.4rem;
+  }
+
+  .asz-crest {
+    max-width: 220px;
+  }
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {

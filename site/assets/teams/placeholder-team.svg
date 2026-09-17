@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="">
+  <!-- Stand-in emblem for a team whose logo we do not have yet - replace with the real one. -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="72%">
+      <stop offset="0" stop-color="#23271a" />
+      <stop offset="1" stop-color="#0f1108" />
+    </radialGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg)" />
+  <circle cx="150" cy="150" r="142" fill="none" stroke="#a89f86" stroke-opacity="0.35" stroke-width="4" />
+  <g fill="none" stroke="#a89f86" stroke-opacity="0.75" stroke-width="7" stroke-linejoin="round">
+    <path d="M150 70 L214 94 V152 C214 192 186 220 150 234 C114 220 86 192 86 152 V94 Z" />
+  </g>
+  <path d="M150 118 L160 142 L186 142 L165 157 L173 182 L150 167 L127 182 L135 157 L114 142 L140 142 Z"
+        fill="#a89f86" fill-opacity="0.55" />
+</svg>
