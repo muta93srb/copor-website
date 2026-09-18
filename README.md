@@ -7,6 +7,10 @@ Fully static club website, hosted for free on GitHub Pages.
 - `site/` — the deployed website (plain HTML/CSS/JS, no build step required to run it).
   - `index.html`, `pravilnik.html`, `bratski-timovi.html`, `asz-jug.html` — pages.
   - `i18n/` — translation dictionaries (`sr-Cyrl.json`, `sr-Latn.json`, `en.json`); language switcher in the header.
+
+    The pages themselves are written in Serbian Cyrillic. On a first visit the language is taken from the browser (Serbian Cyrillic, Serbian Latin, or English), falling back to **Serbian Latin**; the theme is taken from the OS, falling back to **dark**. Either is overridden the moment the reader uses the switcher or the theme toggle, and that choice is then remembered.
+
+    Getting a language other than the one in the markup on screen without a visible flicker takes three pieces, so be careful when editing them together: the inline resolver in each page's `<head>`, `js/i18n.js` (loaded from `<head>`, not the end of `<body>` — it has to translate nodes as the parser emits them), and the `html[data-i18n-pending]` rule in `css/styles.css`. Dictionaries are cached in `localStorage` so moving between pages needs no request at all; a changed dictionary is picked up on the next page load.
   - `gallery/images/` — **drop photos here.** `gallery/manifest.json` is auto-generated on every deploy (see below) — you never edit it by hand.
   - `assets/logo/` — web-sized logo files only (favicon, header logo, social preview).
   - `assets/teams/` — logos of the allied teams on `bratski-timovi.html` and of the ASZ JUG founding teams on `asz-jug.html`. `placeholder-team.svg` stands in for a team whose logo we do not have yet.

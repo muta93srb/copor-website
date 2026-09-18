@@ -27,10 +27,34 @@
       }
       themeToggle.setAttribute("aria-pressed", String(theme === "light"));
     };
-    applyTheme(localStorage.getItem(THEME_KEY) === "light" ? "light" : "dark");
+    const systemTheme = () =>
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark";
+    const storedTheme = () => {
+      try {
+        const v = localStorage.getItem(THEME_KEY);
+        return v === "light" || v === "dark" ? v : null;
+      } catch (e) {
+        return null;
+      }
+    };
+
+    // An explicit choice wins; otherwise follow the system, defaulting to dark.
+    applyTheme(storedTheme() || systemTheme());
+
+    // Until they pick a side, keep following the system if it changes.
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e) => {
+        if (!storedTheme()) applyTheme(e.matches ? "light" : "dark");
+      });
+    }
+
     themeToggle.addEventListener("click", () => {
       const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-      localStorage.setItem(THEME_KEY, next);
+      try {
+        localStorage.setItem(THEME_KEY, next);
+      } catch (e) {}
       applyTheme(next);
     });
   }

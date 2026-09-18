@@ -3,11 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <script>
+      // Runs before the first paint. Resolves the theme and the language - an
+      // explicit choice first, then the system's, then dark / Serbian Latin -
+      // and, when the language is not the one this markup is written in, hands
+      // js/i18n.js a dictionary cached from an earlier page (applied at once,
+      // so nothing is held) plus a request for a fresh copy. Only a reader with
+      // no cached copy yet waits. See js/i18n.js.
       (function () {
+        var root = document.documentElement;
+        var SUPPORTED = ["sr-Cyrl", "sr-Latn", "en"];
+        var BAKED = "sr-Cyrl";
         try {
-          if (localStorage.getItem("copor-theme") === "light") {
-            document.documentElement.setAttribute("data-theme", "light");
+          var theme = localStorage.getItem("copor-theme");
+          if (theme !== "light" && theme !== "dark") {
+            theme =
+              window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
           }
+          if (theme === "light") root.setAttribute("data-theme", "light");
+
+          var lang = localStorage.getItem("copor-lang");
+          if (SUPPORTED.indexOf(lang) === -1) {
+            lang = "sr-Latn";
+            var tags =
+              navigator.languages && navigator.languages.length
+                ? navigator.languages
+                : [navigator.language];
+            for (var i = 0; i < tags.length; i++) {
+              var tag = String(tags[i] || "").toLowerCase();
+              if (!tag) continue;
+              if (tag.indexOf("sr") === 0 || tag.indexOf("sh") === 0) {
+                lang = tag.indexOf("cyrl") !== -1 ? "sr-Cyrl" : "sr-Latn";
+                break;
+              }
+              if (tag.indexOf("en") === 0) {
+                lang = "en";
+                break;
+              }
+            }
+          }
+
+          var handoff = { lang: lang, cached: null, dict: null };
+          if (lang !== BAKED) {
+            try {
+              handoff.cached = JSON.parse(localStorage.getItem("copor-dict:" + lang));
+            } catch (e) {}
+            if (!handoff.cached) root.setAttribute("data-i18n-pending", "");
+            handoff.dict = fetch("i18n/" + lang + ".json")
+              .then(function (res) {
+                return res.ok ? res.json() : null;
+              })
+              .catch(function () {
+                return null;
+              });
+          }
+          window.__coporI18n = handoff;
         } catch (e) {}
       })();
     </script>
@@ -24,6 +75,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/i18n.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -187,7 +239,6 @@
       </div>
     </footer>
 
-    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

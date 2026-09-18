@@ -37,6 +37,45 @@
 
 html {
   scroll-behavior: smooth;
+  /* Also on <html>, so the canvas is already dark while a page is loading or
+     transitioning - otherwise the gap between pages flashes white. */
+  background: var(--color-bg);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* The markup is written in Serbian Cyrillic. When the reader has chosen another
+   language, js/i18n.js holds the paint here rather than letting them watch the
+   Cyrillic flip over after it lands. Released as soon as the dictionary is in
+   (and unconditionally on a failsafe timer). */
+html[data-i18n-pending] body {
+  visibility: hidden;
+}
+
+/* ---------- page transitions ---------- */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }
 
 body {
@@ -1070,6 +1109,11 @@ section:nth-of-type(even) {
 
 .contact-list li {
   margin-bottom: 0.8rem;
+}
+
+/* The email row carries two addresses, so each link gets its own line. */
+.contact-list a {
+  display: block;
 }
 
 .contact-list strong {
