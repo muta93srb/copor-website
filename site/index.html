@@ -606,9 +606,20 @@
                       <stop offset="0.55" stop-color="#000" stop-opacity="0" />
                       <stop offset="1" stop-color="#000" stop-opacity="0.22" />
                     </linearGradient>
+                    <!-- The trousers' fabric: both legs, plus the thigh pockets and their flaps,
+                         which bulge out past the leg - so the camo has to reach those too. -->
                     <clipPath id="uniform2PantsClip">
                       <path d="M106 290L194 290C200 320 204 350 204 380L206 470L204 590L162 592L160 470L154 392Q150 380 146 392L140 470L138 592L96 590L94 470L96 380C96 350 100 320 106 290Z" />
+                      <path d="M92 392L122 390L124 452L96 456ZM208 392L178 390L176 452L204 456Z" />
+                      <path d="M91 384L123 381L124 399L92 402ZM209 384L177 381L176 399L208 402Z" />
                     </clipPath>
+                    <!-- leg shading in page units, so the pocket bulges pick up the same
+                         light-to-shadow as the leg beside them (spans the legs, x 94-206) -->
+                    <linearGradient id="uniform2PantsShade" gradientUnits="userSpaceOnUse" x1="94" x2="206" y1="0" y2="0">
+                      <stop offset="0" stop-color="#fff" stop-opacity="0.07" />
+                      <stop offset="0.55" stop-color="#000" stop-opacity="0" />
+                      <stop offset="1" stop-color="#000" stop-opacity="0.22" />
+                    </linearGradient>
                     <pattern id="uniform2Mesh" width="3" height="3" patternUnits="userSpaceOnUse">
                       <rect width="3" height="3" fill="#6a635c" />
                       <circle cx="1.5" cy="1.5" r="0.75" fill="#544d46" />
@@ -637,8 +648,9 @@
 
                   <!-- pants (Horus P-2 GEN II, DPM) -->
                   <!-- DPM traced from the Horus product photo, see assets/uniform/dpm-camo.svg -->
-                  <image href="assets/uniform/dpm-camo.svg" x="94" y="290" width="112" height="302" preserveAspectRatio="none" clip-path="url(#uniform2PantsClip)" />
-                  <path fill="url(#uniform2Shade)" d="M106 290L194 290C200 320 204 350 204 380L206 470L204 590L162 592L160 470L154 392Q150 380 146 392L140 470L138 592L96 590L94 470L96 380C96 350 100 320 106 290Z" />
+                  <!-- a little wider than the legs (94-206) so it also fills the pocket bulges -->
+                  <image href="assets/uniform/dpm-camo.svg" x="90" y="290" width="120" height="302" preserveAspectRatio="none" clip-path="url(#uniform2PantsClip)" />
+                  <rect x="90" y="290" width="120" height="302" fill="url(#uniform2PantsShade)" clip-path="url(#uniform2PantsClip)" />
                   <g fill="#2f3a24" stroke="#1f241a" stroke-width="0.6">
                     <rect x="110" y="289" width="5" height="12" rx="1" />
                     <rect x="134" y="289" width="5" height="12" rx="1" />
