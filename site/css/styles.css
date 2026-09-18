@@ -830,15 +830,6 @@ section:nth-of-type(even) {
   }
 }
 
-.uniform-svg .patch-text {
-  fill: #d9d0b6;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 6.4px;
-  letter-spacing: 0.03em;
-  text-anchor: middle;
-}
-
 .uniform-svg .callout-line {
   fill: none;
   stroke: var(--color-khaki);
