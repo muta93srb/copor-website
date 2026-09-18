@@ -1355,6 +1355,28 @@ table.rules-table th {
   margin-top: 0;
 }
 
+/* Image on the right, so the page alternates. The image stays first in the
+   markup, which keeps it on top when the columns stack on a phone. */
+.asz-hero--flip {
+  grid-template-columns: 1fr minmax(180px, 260px);
+}
+
+.asz-hero--flip .asz-patch {
+  order: 2;
+}
+
+.asz-patch {
+  width: 100%;
+  height: auto;
+  /* The merrowed edge is nearly as dark as the page, so a faint rim keeps the
+     patch's silhouette readable; the shadow lifts it like the real thing. */
+  filter: drop-shadow(0 0 1px rgba(232, 228, 218, 0.35)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.55));
+}
+
+:root[data-theme="light"] .asz-patch {
+  filter: drop-shadow(0 4px 12px rgba(32, 31, 25, 0.4));
+}
+
 .page-note {
   color: var(--color-text-muted);
   font-size: 0.9rem;
@@ -1367,8 +1389,13 @@ table.rules-table th {
     gap: 1.4rem;
   }
 
-  .asz-crest {
+  .asz-crest,
+  .asz-patch {
     max-width: 220px;
+  }
+
+  .asz-hero--flip .asz-patch {
+    order: 0;
   }
 }
 
