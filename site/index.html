@@ -162,6 +162,12 @@
           <p data-i18n="gallery.intro">Фотографије са тренинга и операција клуба.</p>
 
           <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+          <!-- Photos past the first eight: a swipeable row under the grid, filled by js/main.js -->
+          <div class="gallery-carousel" id="galleryCarousel" hidden>
+            <button type="button" class="carousel-btn carousel-prev" id="galleryPrev" aria-label="Previous photos">‹</button>
+            <div class="carousel-track" id="galleryTrack" role="region" aria-label="More photos" tabindex="0"></div>
+            <button type="button" class="carousel-btn carousel-next" id="galleryNext" aria-label="Next photos">›</button>
+          </div>
           <p class="gallery-empty" id="galleryEmpty" hidden data-i18n="gallery.empty">
             Галерија је тренутно празна. Ускоро додајемо фотографије.
           </p>

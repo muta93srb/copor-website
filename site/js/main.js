@@ -114,29 +114,64 @@
   });
 
   // ---- gallery ----
+  // The first GRID_LIMIT photos fill the grid; the rest go into a swipeable
+  // carousel under it. Either way a photo opens the lightbox on the whole set.
+  const GRID_LIMIT = 8;
   const grid = document.getElementById("galleryGrid");
+  const carousel = document.getElementById("galleryCarousel");
+  const track = document.getElementById("galleryTrack");
+  const carouselPrev = document.getElementById("galleryPrev");
+  const carouselNext = document.getElementById("galleryNext");
   const emptyMsg = document.getElementById("galleryEmpty");
   const errorMsg = document.getElementById("galleryError");
 
   let images = [];
 
+  function thumbnail(item, index, slides) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.setAttribute("aria-label", item.caption || item.file);
+    const img = document.createElement("img");
+    img.src = `gallery/images/${item.file}`;
+    img.alt = item.caption || item.file;
+    img.loading = "lazy";
+    btn.appendChild(img);
+    btn.addEventListener("click", () => openLightbox(slides, index));
+    return btn;
+  }
+
   function renderGallery() {
     if (!grid) return;
     grid.innerHTML = "";
+    if (track) track.innerHTML = "";
     // No label: the manifest captions come from filenames, and a counter alone keeps Latin text out of Cyrillic mode.
     const gallerySlides = images.map((item) => ({ src: `gallery/images/${item.file}`, alt: item.caption || item.file }));
     images.forEach((item, index) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.setAttribute("aria-label", item.caption || item.file);
-      const img = document.createElement("img");
-      img.src = `gallery/images/${item.file}`;
-      img.alt = item.caption || item.file;
-      img.loading = "lazy";
-      btn.appendChild(img);
-      btn.addEventListener("click", () => openLightbox(gallerySlides, index));
-      grid.appendChild(btn);
+      const target = index < GRID_LIMIT || !track ? grid : track;
+      target.appendChild(thumbnail(item, index, gallerySlides));
     });
+    if (carousel && track) {
+      carousel.hidden = images.length <= GRID_LIMIT;
+      updateCarouselButtons();
+    }
+  }
+
+  // Arrows hide at either end; each press moves one screenful of thumbnails.
+  function updateCarouselButtons() {
+    if (!track || !carouselPrev || !carouselNext) return;
+    carouselPrev.disabled = track.scrollLeft <= 1;
+    carouselNext.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+  }
+
+  if (track && carouselPrev && carouselNext) {
+    const page = (dir) => {
+      const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      track.scrollBy({ left: dir * track.clientWidth, behavior: still ? "auto" : "smooth" });
+    };
+    carouselPrev.addEventListener("click", () => page(-1));
+    carouselNext.addEventListener("click", () => page(1));
+    track.addEventListener("scroll", updateCarouselButtons, { passive: true });
+    window.addEventListener("resize", updateCarouselButtons);
   }
 
   async function loadGallery() {
