@@ -224,7 +224,6 @@
   "alliesPage.strelok": "Стрелок",
   "alliesPage.vod016": "Вод 016",
   "alliesPage.carapanija": "Чарапанија",
-  "alliesPage.uzdrzani": "Уздржани",
   "alliesPage.cityNisBojnik": "Ниш · Бојник",
   "alliesPage.cityLeskovac": "Лесковац",
   "alliesPage.cityKrusevac": "Крушевац",
@@ -243,10 +242,9 @@
   "aszJugPage.patchBody": "Овако грб изгледа на тканом печу који се носи на униформи: маслинасто поље, сива трака са натписом, испод ње српска тробојка, црвени и плави угао и тамни опшивени руб.",
   "aszJugPage.foundersEyebrow": "Оснивачи",
   "aszJugPage.foundersTitle": "Тимови који су основали АСЗ ЈУГ 2023.",
-  "aszJugPage.foundersIntro": "Заједницу је 2023. године основало једанаест тимова са југа Србије. ЧОПОР је један од њих.",
+  "aszJugPage.foundersIntro": "Заједницу је 2023. године основало десет тимова са југа Србије. ЧОПОР је један од њих.",
   "aszJugPage.citySouthSerbia": "Југ Србије",
   "aszJugPage.ourClub": "Наш клуб →",
-  "aszJugPage.linkSoon": "Линк ускоро",
   "aszJugPage.correction": "Ако неки податак није тачан или недостаје линк неког оснивача, јави нам преко контакт секције и исправићемо.",
   "aszJugPage.cta": "Контактирај нас →"
 }

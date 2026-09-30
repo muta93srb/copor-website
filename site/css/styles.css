@@ -1405,20 +1405,6 @@ table.rules-table th {
   color: var(--color-khaki);
 }
 
-/* Founder we have no profile link for yet - a card, but nothing to click. */
-.ally-card--pending {
-  cursor: default;
-}
-
-.ally-card--pending:hover {
-  border-color: var(--color-border);
-  transform: none;
-}
-
-.ally-link--pending {
-  color: var(--color-text-muted);
-}
-
 .ally-card--own {
   border-color: var(--color-khaki-dark);
 }

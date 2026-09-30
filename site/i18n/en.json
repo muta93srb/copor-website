@@ -224,7 +224,6 @@
   "alliesPage.strelok": "Strelok",
   "alliesPage.vod016": "Vod 016",
   "alliesPage.carapanija": "Čarapanija",
-  "alliesPage.uzdrzani": "Uzdržani",
   "alliesPage.cityNisBojnik": "Niš · Bojnik",
   "alliesPage.cityLeskovac": "Leskovac",
   "alliesPage.cityKrusevac": "Kruševac",
@@ -243,10 +242,9 @@
   "aszJugPage.patchBody": "This is the crest as the woven patch worn on the uniform: an olive field, a grey band carrying the lettering, the Serbian tricolour beneath it, red and blue corners, and a dark merrowed edge.",
   "aszJugPage.foundersEyebrow": "Founders",
   "aszJugPage.foundersTitle": "The teams that founded ASZ JUG in 2023",
-  "aszJugPage.foundersIntro": "The community was founded in 2023 by eleven teams from southern Serbia. Copor is one of them.",
+  "aszJugPage.foundersIntro": "The community was founded in 2023 by ten teams from southern Serbia. Copor is one of them.",
   "aszJugPage.citySouthSerbia": "Southern Serbia",
   "aszJugPage.ourClub": "Our club →",
-  "aszJugPage.linkSoon": "Link coming soon",
   "aszJugPage.correction": "If something here is wrong, or a founder's link is missing, let us know through the contact section and we'll fix it.",
   "aszJugPage.cta": "Contact us →"
 }
